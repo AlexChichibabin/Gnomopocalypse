@@ -6,17 +6,12 @@ public class GameBootstrapState : IEnterableState
     private IGameStateSwitcher gameStateSwitcher;
     private IConfigProvider configProvider;
 
-    private ISimpleStateMachine simpleStateMachine;
-
 	public GameBootstrapState(
         IGameStateSwitcher gameStateSwitcher, 
-        IConfigProvider configProvider,
-		ISimpleStateMachine simpleStateMachine)
+        IConfigProvider configProvider)
     {
         this.gameStateSwitcher = gameStateSwitcher;
         this.configProvider = configProvider;
-
-        this.simpleStateMachine = simpleStateMachine;
     }
 
     public void Enter()
@@ -33,10 +28,6 @@ public class GameBootstrapState : IEnterableState
 
 		var sceneName = SceneManager.GetActiveScene().name;
         if (sceneName == Constants.BootstrapSceneName || sceneName == Constants.GameplaySceneName)
-        {
-			gameStateSwitcher.Enter<LoadNextLevelState>();
-			simpleStateMachine.ApplyState(LevelState.Bootstrap);
-		}
-            
+			gameStateSwitcher.Enter<LoadNextLevelState>();   
 	}
 }
