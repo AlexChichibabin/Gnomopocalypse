@@ -1,10 +1,9 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
 
-public class PlayButton : MonoBehaviour
+public class MenuButton : MonoBehaviour
 {
 	private Button button;
 	private IGameStateMachine gameStateMachine;
@@ -24,6 +23,6 @@ public class PlayButton : MonoBehaviour
 	{
 		var sceneName = SceneManager.GetActiveScene().name;
 
-		gameStateMachine.ApplyState(GameState.LoadLevel);
+		gameStateMachine.ApplyState(GameState.Menu);
 	}
 }

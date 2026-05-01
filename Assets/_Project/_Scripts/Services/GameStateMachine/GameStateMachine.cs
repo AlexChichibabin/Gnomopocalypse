@@ -1,4 +1,5 @@
 using System;
+using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,7 @@ public enum GameState
 {
 	None,
 	Bootstrap,
+	Menu,
 	LoadLevel
 }
 public class GameStateMachine : IGameStateMachine
@@ -37,6 +39,9 @@ public class GameStateMachine : IGameStateMachine
 				break;
 			case GameState.LoadLevel:
 				ApplyLoadLevel();
+				break;
+			case GameState.Menu:
+				ApplyMenu();
 				break;
 
 			default:
@@ -70,7 +75,7 @@ public class GameStateMachine : IGameStateMachine
 	}
 	private void ApplyLoadLevel()
 	{
-		if (currentState != GameState.Bootstrap) return;
+		//if (currentState != GameState.Bootstrap) return;
 
 		Debug.Log("GLOBAL: LoadLevel");
 		currentState = GameState.LoadLevel;
@@ -84,6 +89,15 @@ public class GameStateMachine : IGameStateMachine
 			SceneManager.LoadScene(sceneName);
 			Debug.Log("GLOBAL: LoadLevel_SceneLoaded");
 		}
+
+		StateChanged?.Invoke(currentState);
+
+	}
+	private void ApplyMenu()
+	{
+		currentState = GameState.Menu;
+
+		SceneManager.LoadScene(Constants.MainMenuSceneName);
 
 		StateChanged?.Invoke(currentState);
 	}
