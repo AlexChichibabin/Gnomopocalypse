@@ -15,10 +15,14 @@ public class GameStateMachine : IGameStateMachine
 
 	private GameState currentState = GameState.None;
 	private IConfigProvider configProvider;
+	private IPlayerProgress progress;
 
-	public GameStateMachine(IConfigProvider configProvider)
+	public GameStateMachine(
+		IConfigProvider configProvider,
+		IPlayerProgress progress)
 	{
 		this.configProvider = configProvider;
+		this.progress = progress;
 	}
 
 	public void ApplyState(GameState state)
@@ -53,14 +57,15 @@ public class GameStateMachine : IGameStateMachine
 		Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.numerator;
 
 		configProvider.Load();
+		progress.Init();
 
 		var sceneName = SceneManager.GetActiveScene().name;
 		
 
 		StateChanged?.Invoke(currentState);
 
-		if (sceneName == Constants.BootstrapSceneName || sceneName == Constants.GameplaySceneName)
-			ApplyState(GameState.LoadLevel);
+		if (sceneName == Constants.BootstrapSceneName)
+			SceneManager.LoadScene(Constants.MainMenuSceneName);
 
 	}
 	private void ApplyLoadLevel()
@@ -70,7 +75,9 @@ public class GameStateMachine : IGameStateMachine
 		Debug.Log("GLOBAL: LoadLevel");
 		currentState = GameState.LoadLevel;
 
-		string sceneName = configProvider.GetLevel(0).SceneName;
+		//string sceneName = configProvider.GetLevel(0).SceneName;
+
+		string sceneName = progress.GetNextLevelConfig().SceneName;
 
 		if (SceneManager.GetActiveScene().name != sceneName)
 		{

@@ -15,7 +15,7 @@ public class ConfigProvider : IConfigProvider
 
 		levels = levelList.ToDictionary(x => x.SceneName, x => x);
 	}
-
+	public LevelConfig[] GetLevelList() => levelList;
 	public LevelConfig GetLevel(int index) => levelList[index];
 	public LevelConfig GetLevel(string name) => levels[name];
 

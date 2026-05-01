@@ -19,9 +19,11 @@ public class GameInstaller : MonoInstaller
 	{
         BindConfigProvider();
 		BindInputService();
+		BindPlayerProgress();
 	}
 
-
+	private void BindPlayerProgress() =>
+		Container.Bind<IPlayerProgress>().To<PlayerProgress>().AsSingle();
     private void BindConfigProvider() => 
 		Container.Bind<IConfigProvider>().To<ConfigProvider>().AsSingle();
 	private void BindInputService()
