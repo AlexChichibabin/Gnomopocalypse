@@ -476,6 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PrototypeInstaller
   _unitPrefab: {fileID: 50510882047931875, guid: 595ae5abb2911de4b859e5cab3545a3b, type: 3}
+  _projectilePrefab: {fileID: 7070435549800125884, guid: 01b253c3bcd4719408ec0e529cdf039b, type: 3}
   _spawnRateConfig: {fileID: 11400000, guid: c13ef90d34bef214f87e40b3d89c8980, type: 2}
 --- !u!114 &589088318
 MonoBehaviour:

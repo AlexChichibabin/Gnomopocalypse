@@ -1,11 +1,9 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Zenject;
 
 public class Shooting : MonoBehaviour
 {
-	public Transform anchor;
+	private Transform anchor;
 	public float power = 8f;
 	public float maxDragDistance = 2f;
 
@@ -15,6 +13,8 @@ public class Shooting : MonoBehaviour
 
 	private IInputService input;
 
+	public bool IsMoving;
+
 	Vector2 mousePos;
 
 	[Inject]
@@ -22,6 +22,7 @@ public class Shooting : MonoBehaviour
 	{
 		this.input = input;
 	}
+
 	void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
@@ -30,6 +31,12 @@ public class Shooting : MonoBehaviour
 		input.MousePos += OnMouseMove;
 
 	}
+	
+    public void Init(Transform transform)
+    {
+        anchor = transform;
+		IsMoving = false;
+    }
 
 	private void OnMouseMove(Vector2 pos)
 	{
@@ -39,11 +46,13 @@ public class Shooting : MonoBehaviour
 	void OnMouseDown()
 	{
 		dragging = true;
+		
 	}
 
 	void OnMouseDrag()
 	{
 		if (!dragging) return;
+		if(anchor == null) Debug.LogError("[Shooting] not inited!");
 
 		Vector2 mouseWorld = cam.ScreenToWorldPoint(mousePos);
 		Vector2 anchorPos = anchor.position;
@@ -67,6 +76,10 @@ public class Shooting : MonoBehaviour
 		rb.linearVelocity = Vector2.zero;
 		rb.angularVelocity = 0f;
 		rb.AddForce(forceDir * power, ForceMode2D.Impulse);
+
+		IsMoving = true;
 	}
+
+
 }
 

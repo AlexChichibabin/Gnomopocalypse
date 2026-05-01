@@ -3,9 +3,15 @@ using Zenject;
 
 public class Unit : MonoBehaviour
 {
+    private float _startHealth = 100;// temp
     private float _startMoveSpeed = 1; // temp
 
     [SerializeField] private UnitMove _unitMove;
+    [SerializeField] private UnitHealth _unitHealth;
+
+    public UnitHealth Damageble => _unitHealth;
+
+    public UnitType UnitType { get; private set; }
 
     [Inject]
     private void Construct(/* config*/)
@@ -15,13 +21,23 @@ public class Unit : MonoBehaviour
 
     private void OnSpawned()
     {
-        _unitMove.Init( /* config.startMoveSpeed */ _startMoveSpeed);
+        UnitType = UnitType.Smelly;
+        //TODO add UnitType
 
-        //Debug.Log("[Unit] Spawned");
+        _unitMove.Init( /* config from UnitType */ _startMoveSpeed);
+        _unitHealth.Init( /* config from UnitType */ _startHealth, 25, 10);      // temp
+        _unitHealth.ZeroHealth += OnZeroHealth;
+
+    }
+
+    private void OnZeroHealth()
+    {
+        //todo death
     }
 
     private void OnDespawned()
     {
+        _unitHealth.ZeroHealth -= OnZeroHealth;
         Debug.Log("[Unit] Spawned");
     }
 
