@@ -18,11 +18,18 @@ public class GameInstaller : MonoInstaller
 	private void RegisterGameServices()
 	{
         BindConfigProvider();
+		BindInputService();
 	}
 
 
     private void BindConfigProvider() => 
 		Container.Bind<IConfigProvider>().To<ConfigProvider>().AsSingle();
+	private void BindInputService()
+	{
+		Container.Bind<PlayerActions>().FromNew().AsSingle();
+		Container.Bind<IInputService>().To<InputService>().AsSingle();
+	}
+		
 
 	private void RegisterSimpleStateMachine()
 	{

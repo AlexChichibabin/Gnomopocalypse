@@ -55,10 +55,12 @@ public class GameStateMachine : IGameStateMachine
 		configProvider.Load();
 
 		var sceneName = SceneManager.GetActiveScene().name;
-		if (sceneName == Constants.BootstrapSceneName || sceneName == Constants.GameplaySceneName)
-			ApplyState(GameState.LoadLevel);
+		
 
 		StateChanged?.Invoke(currentState);
+
+		if (sceneName == Constants.BootstrapSceneName || sceneName == Constants.GameplaySceneName)
+			ApplyState(GameState.LoadLevel);
 
 	}
 	private void ApplyLoadLevel()
