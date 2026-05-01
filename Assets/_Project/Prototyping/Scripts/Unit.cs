@@ -17,7 +17,7 @@ public class Unit : MonoBehaviour
     {
         _unitMove.Init( /* config.startMoveSpeed */ _startMoveSpeed);
 
-        Debug.Log("[Unit] Spawned");
+        //Debug.Log("[Unit] Spawned");
     }
 
     private void OnDespawned()

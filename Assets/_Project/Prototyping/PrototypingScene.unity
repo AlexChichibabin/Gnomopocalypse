@@ -149,8 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitsFactory
   _spawnPoint: {fileID: 54823012}
-  _spawnRadius: 1.5
-  _spawnTime: 2
+  _spawnRadius: 0.5
 --- !u!4 &54823012
 Transform:
   m_ObjectHideFlags: 0
@@ -245,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PrototypeInstaller
   _unitPrefab: {fileID: 50510882047931875, guid: 595ae5abb2911de4b859e5cab3545a3b, type: 3}
+  _spawnRateConfig: {fileID: 11400000, guid: c13ef90d34bef214f87e40b3d89c8980, type: 2}
 --- !u!1 &590061941
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,7 +636,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.16981131, g: 0.16885011, b: 0.16885011, a: 1}
+  m_Color: {r: 0.3132075, g: 0.306707, b: 0.306707, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
