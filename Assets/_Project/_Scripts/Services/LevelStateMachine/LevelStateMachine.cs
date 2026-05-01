@@ -18,10 +18,14 @@ public class LevelStateMachine : ILevelStateMachine
 
 	private LevelState currentState = LevelState.None;
 	private IConfigProvider configProvider;
+	private IInputService inputService;
 
-	public LevelStateMachine(IConfigProvider configProvider)
+	public LevelStateMachine(
+		IConfigProvider configProvider,
+		IInputService inputService)
 	{
 		this.configProvider = configProvider;
+		this.inputService = inputService;
 	}
 
 	public void ApplyState(LevelState state)
@@ -62,8 +66,9 @@ public class LevelStateMachine : ILevelStateMachine
 		string sceneName = SceneManager.GetActiveScene().name;
 		LevelConfig levelConfig = configProvider.GetLevel(sceneName);
 
-
 		StateChanged?.Invoke(currentState);
+
+		ApplyState(LevelState.Gameplay);
 	}
 	private void ApplyGameplay()
 	{
@@ -72,6 +77,7 @@ public class LevelStateMachine : ILevelStateMachine
 		Debug.Log("LEVEL: Gameplay");
 		currentState = LevelState.Bootstrap;
 
+		inputService.EnableGameplay();
 
 		StateChanged?.Invoke(currentState);
 	}
