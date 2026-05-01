@@ -9,8 +9,6 @@ public class GameInstaller : MonoInstaller
 
         RegisterGameServices();
 
-		RegisterGameStateMachine();
-
 		RegisterSimpleStateMachine();
 
 
@@ -22,18 +20,12 @@ public class GameInstaller : MonoInstaller
         BindConfigProvider();
 	}
 
-    private void RegisterGameStateMachine()
-	{
-		Container.Bind<IGameStateSwitcher>().To<GameStateMachine>().AsSingle();
-		Container.Bind<GameBootstrapState>().FromNew().AsSingle();
-		Container.Bind<LoadNextLevelState>().FromNew().AsSingle();
-	}
 
     private void BindConfigProvider() => 
 		Container.Bind<IConfigProvider>().To<ConfigProvider>().AsSingle();
 
 	private void RegisterSimpleStateMachine()
 	{
-		Container.Bind<ISimpleStateMachine>().To<SimpleStateMachine>().AsSingle();
+		Container.Bind<IGameStateMachine>().To<GameStateMachine>().AsSingle();
 	}
 }
