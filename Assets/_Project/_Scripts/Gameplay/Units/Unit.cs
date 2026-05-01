@@ -3,9 +3,6 @@ using Zenject;
 
 public class Unit : MonoBehaviour
 {
-    private float _startHealth = 100;// temp
-    private float _startMoveSpeed = 1; // temp
-
     [SerializeField] private UnitMove _unitMove;
     [SerializeField] private UnitHealth _unitHealth;
 
@@ -13,19 +10,11 @@ public class Unit : MonoBehaviour
 
     public UnitType UnitType { get; private set; }
 
-    [Inject]
-    private void Construct(/* config*/)
+    private void OnSpawned(UnitConfig config)
     {
-        //todo
-    }
-
-    private void OnSpawned()
-    {
-        UnitType = UnitType.Smelly;
-        //TODO add UnitType
-
-        _unitMove.Init( /* config from UnitType */ _startMoveSpeed);
-        _unitHealth.Init( /* config from UnitType */ _startHealth, 25, 10);      // temp
+        UnitType = config.UnitType;
+        _unitMove.Init(config.StartMoveSpeed);
+        _unitHealth.Init(config.StartHealth, config.MainDamagePercent, config.SecondaryDamagePercent);
         _unitHealth.ZeroHealth += OnZeroHealth;
 
     }
@@ -38,15 +27,14 @@ public class Unit : MonoBehaviour
     private void OnDespawned()
     {
         _unitHealth.ZeroHealth -= OnZeroHealth;
-        Debug.Log("[Unit] Spawned");
+        Debug.Log("[Unit] Despawned");
     }
 
-    public class UnitPool : MonoMemoryPool<Unit>
+    public class UnitPool : MonoMemoryPool<UnitConfig, Unit>
     {
-        protected override void OnSpawned(Unit unit)
+        protected override void Reinitialize(UnitConfig config, Unit unit)
         {
-            base.OnSpawned(unit);
-            unit.OnSpawned();
+            unit.OnSpawned(config);
         }
 
         protected override void OnDespawned(Unit unit)

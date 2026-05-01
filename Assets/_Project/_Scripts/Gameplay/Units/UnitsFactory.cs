@@ -2,50 +2,58 @@ using System.Collections;
 using UnityEngine;
 using Zenject;
 
-public class UnitsFactory : 
-MonoBehaviour                                               //temp
+public class UnitsFactory : IInitializable, ILateDisposable
 {
-    [SerializeField] private Transform _spawnPoint;         //temp
-    [SerializeField] private float _spawnRadius = 3;        //temp
-
     private Unit.UnitPool _unitPool;
-    private SpawnRateConfig _spawnRateConfig;
+    private IConfigProvider _configProvider;
+    private ICoroutineRunner _coroutineRunner;
+    private UnitsSpawnSettings _spawnSettings;
+    private Coroutine _spawnRoutine;
     private bool _canSpawn;
+    private ILevelStateMachine _levelStateMachine;
 
-    // public UnitsFactory(Unit.UnitPool unitPool)
-    // {
-    //     _unitPool = unitPool;
 
-    //     //subscribe to the FSM, when the state is game - start spawning
-    // }
-
-    [Inject]
-    private void Construct(Unit.UnitPool unitPool, SpawnRateConfig spawnRateConfig)          //temp
+    public UnitsFactory(Unit.UnitPool unitPool,
+            IConfigProvider configProvider,
+            ICoroutineRunner coroutineRunner,
+            ILevelStateMachine levelStateMachine,
+            UnitsSpawnSettings spawnSettings)
     {
         _unitPool = unitPool;
-        _spawnRateConfig = spawnRateConfig;
+        _configProvider = configProvider;
+        _coroutineRunner = coroutineRunner;
+        _levelStateMachine = levelStateMachine;
+        _spawnSettings = spawnSettings;
     }
 
-    void OnEnable()                                          //temp
+    public void Initialize()
     {
         _canSpawn = true;
-        
+        _levelStateMachine.StateChanged += OnStateChanged;
     }
 
-    void Start()                                            // temp
+    private void OnStateChanged(LevelState state)
     {
-        StartCoroutine(SpawnRoutine());
+        if (state != LevelState.Gameplay)
+            return;
+
+        _levelStateMachine.StateChanged -= OnStateChanged;
+
+        if (_spawnRoutine == null)
+            _spawnRoutine = _coroutineRunner.Run(SpawnRoutine());
     }
 
-    private IEnumerator SpawnRoutine()                      //temp
+    private IEnumerator SpawnRoutine()                      
     {
-        if (_spawnRateConfig == null)
+        SpawnRateConfig spawnRateConfig = _configProvider.SpawnRateConfig;
+
+        if (spawnRateConfig == null)
         {
             Debug.LogWarning("[UnitsFactory] Spawn rate config is missing");
             yield break;
         }
 
-        SpawnRateStep[] spawnRateSteps = _spawnRateConfig.SpawnRateSteps;
+        SpawnRateStep[] spawnRateSteps = spawnRateConfig.SpawnRateSteps;
 
         if (spawnRateSteps == null || spawnRateSteps.Length == 0)
         {
@@ -62,7 +70,19 @@ MonoBehaviour                                               //temp
             Debug.Log($"[UnitsFactory] Step {stepIndex + 1}: {step.UnitsPerMinute} units/minute");
 
             yield return SpawnByStep(step, isLastStep);
+
+            if (_canSpawn && !isLastStep)
+                yield return WaitForNextWavePause(step);
         }
+    }
+
+    private IEnumerator WaitForNextWavePause(SpawnRateStep step)
+    {
+        if (step.PauseUntilNextWave <= 0)
+            yield break;
+
+        Debug.Log($"[UnitsFactory] Pause before next wave: {step.PauseUntilNextWave} seconds");
+        yield return new WaitForSeconds(step.PauseUntilNextWave);
     }
 
     private IEnumerator SpawnByStep(SpawnRateStep step, bool isLastStep)
@@ -111,21 +131,30 @@ MonoBehaviour                                               //temp
             yield return new WaitForSeconds(stepDuration - elapsedTime);
     }
 
-    public void SpawnUnit() 
+    public void SpawnUnit()
     {
-        Unit unit = _unitPool.Spawn();
+        UnitConfig unitConfig = _configProvider.GetRandomUnitConfig();
+
+        if (unitConfig == null)
+            return;
+
+        Unit unit = _unitPool.Spawn(unitConfig);
         unit.transform.position = GetRandomSpawnPosition();
     }
 
     private Vector3 GetRandomSpawnPosition()
     {
-        Vector2 offset = Random.insideUnitCircle * _spawnRadius;
+        Vector2 offset = Random.insideUnitCircle * _spawnSettings.SpawnRadius;
 
-        return _spawnPoint.position + new Vector3(offset.x, offset.y, 0);
+        return _spawnSettings.SpawnPoint + new Vector3(offset.x, offset.y, 0);
     }
 
-    void OnDisable()                                        //temp
+    public void LateDispose()
     {
         _canSpawn = false;
+        _levelStateMachine.StateChanged -= OnStateChanged;
+        _coroutineRunner?.Stop(_spawnRoutine);
+        _spawnRoutine = null;
     }
+
 }

@@ -3,6 +3,10 @@ using Zenject;
 
 public class LevelInstaller : MonoInstaller
 {
+    [SerializeField] private Unit _unitPrefab;
+    [SerializeField] private Projectile _projectilePrefab;
+    [SerializeField] private UnitsSpawnSettings _unitsSpawnSettings;
+
     public override void InstallBindings()
     {
         Debug.Log("LEVEL: Install");
@@ -16,7 +20,38 @@ public class LevelInstaller : MonoInstaller
 
     private void RegisterGameplayServices()
     {
+        if (_unitPrefab == null || _projectilePrefab == null)
+            Debug.LogError("[LevelInstaller] Pool prefab link lost");
 
+        if (_unitsSpawnSettings != null)
+        {
+            Container.Bind<UnitsSpawnSettings>()
+                .FromInstance(_unitsSpawnSettings)
+                .AsSingle();
+        }
+        else
+        {
+            Container.Bind<UnitsSpawnSettings>()
+                .FromComponentInHierarchy()
+                .AsSingle();
+        }
+
+        Container.BindInterfacesAndSelfTo<UnitsFactory>()
+            .AsSingle();
+
+        Container.Bind<ICoroutineRunner>()
+            .To<CoroutineRunner>()
+            .FromNewComponentOnNewGameObject()
+            .WithGameObjectName("CoroutineRunner")
+            .AsSingle();
+
+        Container.BindMemoryPool<Unit, Unit.UnitPool>()
+            .FromComponentInNewPrefab(_unitPrefab)
+            .UnderTransformGroup("Units");
+
+        Container.BindMemoryPool<Projectile, Projectile.ProjectilePool>()
+            .FromComponentInNewPrefab(_projectilePrefab)
+            .UnderTransformGroup("Projectiles");
     }
 	private void RegisterSimpleStateMachine()
 	{
