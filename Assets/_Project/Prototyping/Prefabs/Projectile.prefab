@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3845744874815513661}
   - component: {fileID: 7070435549800125884}
   - component: {fileID: 4222358204293203592}
+  - component: {fileID: 4671377262729564431}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5406038132618657668}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.73, y: -3.38, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -51,7 +52,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -109,11 +110,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
+    - - {x: -0.42245212, y: 0.8454444}
+      - {x: -0.8428673, y: -0.00009441376}
+      - {x: -0.55172217, y: -0.8502316}
+      - {x: 0.521947, y: -0.8685353}
+      - {x: 0.84537774, y: -0.025934696}
+      - {x: 0.47193375, y: 0.79844373}
   m_UseDelaunayMesh: 1
 --- !u!114 &7070435549800125884
 MonoBehaviour:
@@ -129,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   _projectileType: 0
   _projectileTrigger: {fileID: 4222358204293203592}
+  _shooting: {fileID: 4671377262729564431}
 --- !u!114 &4222358204293203592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +144,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258f69b0b54af2f47bd7fe3cc9ed05c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileTrigger
+--- !u!114 &4671377262729564431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406038132618657668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ae116c75e2e6141b30293e0fa01c32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shooting
+  power: 8
+  maxDragDistance: 2
+  IsMoving: 0
 --- !u!1 &7675234838323715378
 GameObject:
   m_ObjectHideFlags: 0
