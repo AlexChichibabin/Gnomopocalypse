@@ -6,6 +6,7 @@ public class LevelInstaller : MonoInstaller
     [SerializeField] private Unit _unitPrefab;
     [SerializeField] private Projectile _projectilePrefab;
     [SerializeField] private UnitsSpawnSettings _unitsSpawnSettings;
+    [SerializeField] private ShootingAnchor _shootingAnchor;
 
     public override void InstallBindings()
     {
@@ -33,6 +34,13 @@ public class LevelInstaller : MonoInstaller
         {
             Container.Bind<UnitsSpawnSettings>()
                 .FromComponentInHierarchy()
+                .AsSingle();
+        }
+
+        if (_shootingAnchor != null)
+        {
+            Container.Bind<ShootingAnchor>()
+                .FromInstance(_shootingAnchor)
                 .AsSingle();
         }
 

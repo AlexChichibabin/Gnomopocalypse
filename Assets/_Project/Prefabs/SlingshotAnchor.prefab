@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9cad9daf3c8b34cb510fa502b70edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileFactory
+  _projectileType: 0
   _spawnPoint: {fileID: 7206584913245880584}
   _spawnDelay: 1
 --- !u!1 &3788760060006550628

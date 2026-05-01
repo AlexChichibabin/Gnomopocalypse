@@ -3,8 +3,10 @@ using Zenject;
 
 public class Unit : MonoBehaviour
 {
+  
     [SerializeField] private UnitMove _unitMove;
     [SerializeField] private UnitHealth _unitHealth;
+    [SerializeField] private UnitView _unitView;
 
     public UnitHealth Damageble => _unitHealth;
 
@@ -13,6 +15,8 @@ public class Unit : MonoBehaviour
     private void OnSpawned(UnitConfig config)
     {
         UnitType = config.UnitType;
+
+       _unitView.Init(config.UnitType);
         _unitMove.Init(config.StartMoveSpeed);
         _unitHealth.Init(config.StartHealth, config.MainDamagePercent, config.SecondaryDamagePercent);
         _unitHealth.ZeroHealth += OnZeroHealth;

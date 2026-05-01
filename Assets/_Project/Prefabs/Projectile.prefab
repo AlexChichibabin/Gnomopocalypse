@@ -129,9 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f3429a065839840bcf529547bedcdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
-  _projectileType: 0
   _projectileTrigger: {fileID: 4222358204293203592}
-  _shooting: {fileID: 4671377262729564431}
 --- !u!114 &4222358204293203592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,9 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ae116c75e2e6141b30293e0fa01c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shooting
-  power: 8
-  maxDragDistance: 2
-  IsMoving: 0
+  _power: 8
+  _maxDragDistance: 2
 --- !u!1 &7675234838323715378
 GameObject:
   m_ObjectHideFlags: 0

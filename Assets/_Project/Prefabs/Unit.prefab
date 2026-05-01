@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 50510882047931875}
   - component: {fileID: 5057841788971828481}
   - component: {fileID: 7744504077603833904}
+  - component: {fileID: 8058583965106230861}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Untagged
@@ -344,6 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Unit
   _unitMove: {fileID: 5057841788971828481}
   _unitHealth: {fileID: 7744504077603833904}
+  _unitView: {fileID: 8058583965106230861}
 --- !u!114 &5057841788971828481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +370,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e7ab6fcb98ae3428289c6461d4f7f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitHealth
+--- !u!114 &8058583965106230861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8325738064408767118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a59bc929fff40346a2ac0e22516f2c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitView
+  _spriteRenderer: {fileID: 1324800161090597685}
 --- !u!1 &8709514008836572722
 GameObject:
   m_ObjectHideFlags: 0
