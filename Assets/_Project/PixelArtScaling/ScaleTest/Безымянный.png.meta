@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 6d8651637211cdd469eb7cb463adf684
+guid: fa1df3279e860424bab035598a961000
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5691640412424615158
-    second: gnomes32x32_0
-  - first:
-      213: 9126474330459753208
-    second: gnomes32x32_1
-  - first:
-      213: -795991758419968972
-    second: gnomes32x32_2
-  - first:
-      213: 6507576259734824452
-    second: gnomes32x32_3
+      213: 5228533124577876628
+    second: "\u0411\u0435\u0437\u044B\u043C\u044F\u043D\u043D\u044B\u0439_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -81,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -107,10 +98,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: WebGL
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,89 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gnomes32x32_0
+      name: "\u0411\u0435\u0437\u044B\u043C\u044F\u043D\u043D\u044B\u0439_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 320
+        height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6f4b3dbacc4ccfe40800000000000000
-      internalID: 5691640412424615158
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gnomes32x32_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8fa46c6ac00c7ae70800000000000000
-      internalID: 9126474330459753208
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gnomes32x32_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 43c3d3b86b114f4f0800000000000000
-      internalID: -795991758419968972
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gnomes32x32_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 406624e212e8f4a50800000000000000
-      internalID: 6507576259734824452
+      spriteID: 49ad3d2cc2b7f8840800000000000000
+      internalID: 5228533124577876628
       vertices: []
       indices: 
       edges: []
@@ -223,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      gnomes32x32_0: 5691640412424615158
-      gnomes32x32_1: 9126474330459753208
-      gnomes32x32_2: -795991758419968972
-      gnomes32x32_3: 6507576259734824452
+      "\u0411\u0435\u0437\u044B\u043C\u044F\u043D\u043D\u044B\u0439_0": 5228533124577876628
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

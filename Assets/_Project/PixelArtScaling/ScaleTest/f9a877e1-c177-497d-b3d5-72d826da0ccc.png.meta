@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 6d8651637211cdd469eb7cb463adf684
+guid: 04f6ad177dc92b149baa9ef375bfa7f2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5691640412424615158
-    second: gnomes32x32_0
+      213: 2283867432886516193
+    second: f9a877e1-c177-497d-b3d5-72d826da0ccc_0
   - first:
-      213: 9126474330459753208
-    second: gnomes32x32_1
+      213: -2559131082913338502
+    second: f9a877e1-c177-497d-b3d5-72d826da0ccc_1
   - first:
-      213: -795991758419968972
-    second: gnomes32x32_2
-  - first:
-      213: 6507576259734824452
-    second: gnomes32x32_3
+      213: -6364264586144025552
+    second: f9a877e1-c177-497d-b3d5-72d826da0ccc_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,7 +78,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -107,10 +104,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: WebGL
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gnomes32x32_0
+      name: f9a877e1-c177-497d-b3d5-72d826da0ccc_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 7
+        y: 2
+        width: 50
+        height: 61
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6f4b3dbacc4ccfe40800000000000000
-      internalID: 5691640412424615158
+      spriteID: 1e9b84b645de1bf10800000000000000
+      internalID: 2283867432886516193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gnomes32x32_1
+      name: f9a877e1-c177-497d-b3d5-72d826da0ccc_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
+        x: 7
+        y: 2
+        width: 50
+        height: 60
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8fa46c6ac00c7ae70800000000000000
-      internalID: 9126474330459753208
+      spriteID: a7b2a45c6d32c7cd0800000000000000
+      internalID: -2559131082913338502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gnomes32x32_2
+      name: f9a877e1-c177-497d-b3d5-72d826da0ccc_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
+        x: 52
+        y: 2
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,30 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43c3d3b86b114f4f0800000000000000
-      internalID: -795991758419968972
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gnomes32x32_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 406624e212e8f4a50800000000000000
-      internalID: 6507576259734824452
+      spriteID: 034794604179da7a0800000000000000
+      internalID: -6364264586144025552
       vertices: []
       indices: 
       edges: []
@@ -223,10 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      gnomes32x32_0: 5691640412424615158
-      gnomes32x32_1: 9126474330459753208
-      gnomes32x32_2: -795991758419968972
-      gnomes32x32_3: 6507576259734824452
+      f9a877e1-c177-497d-b3d5-72d826da0ccc_0: 2283867432886516193
+      f9a877e1-c177-497d-b3d5-72d826da0ccc_1: -2559131082913338502
+      f9a877e1-c177-497d-b3d5-72d826da0ccc_2: -6364264586144025552
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
