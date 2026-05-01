@@ -18,6 +18,7 @@ public class PrototypeInstaller : MonoInstaller
 			.FromComponentInNewPrefab(_unitPrefab)
 			.UnderTransformGroup("Units");
 
+		if (_projectilePrefab != null) // Добавил проверку. Если хочешь убери
 			Container.BindMemoryPool<Projectile, Projectile.ProjectilePool>()
 			.FromComponentInNewPrefab(_projectilePrefab)
 			.UnderTransformGroup("Projectiles");
