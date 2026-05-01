@@ -3,14 +3,26 @@ using Zenject;
 
 public class Unit : MonoBehaviour
 {
+    private float _startMoveSpeed = 1; // temp
+
+    [SerializeField] private UnitMove _unitMove;
+
+    [Inject]
+    private void Construct(/* config*/)
+    {
+        //todo
+    }
+
     private void OnSpawned()
     {
-         Debug.Log("[Unit] Spawned");
+        _unitMove.Init( /* config.startMoveSpeed */ _startMoveSpeed);
+
+        Debug.Log("[Unit] Spawned");
     }
 
     private void OnDespawned()
     {
-       Debug.Log("[Unit] Despawned");
+        Debug.Log("[Unit] Spawned");
     }
 
     public class UnitPool : MonoMemoryPool<Unit>
