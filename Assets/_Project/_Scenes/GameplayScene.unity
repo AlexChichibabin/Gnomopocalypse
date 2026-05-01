@@ -222,7 +222,6 @@ GameObject:
   - component: {fileID: 1880992234}
   - component: {fileID: 1880992233}
   - component: {fileID: 1880992232}
-  - component: {fileID: 1880992231}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -230,18 +229,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1880992231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880992230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 420f108448e716244aff479de096c129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelStateMachineTicker
 --- !u!114 &1880992232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2dda8ae69b9264eb6cc324598522e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelInstaller
-  levelStateMachineTicker: {fileID: 1880992231}
 --- !u!114 &1880992233
 MonoBehaviour:
   m_ObjectHideFlags: 0

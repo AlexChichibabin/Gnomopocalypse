@@ -3,23 +3,11 @@ using Zenject;
 
 public class LevelBootstrapper : IInitializable
 {
-    //private ILevelStateSwitcher levelStateSwitcher;
-    //private LevelBootstrapState levelBootstrapState;
-    //private LevelGameplayState levelResearchState;
-    private ISimpleStateMachine simpleStateMachine;
+    private ILevelStateMachine simpleStateMachine;
 
-    public LevelBootstrapper(
-		//ILevelStateSwitcher levelStateSwitcher,
-		//LevelBootstrapState levelBootstrapState,
-		//LevelGameplayState levelResearchState
-		ISimpleStateMachine simpleStateMachine
-		)
+    public LevelBootstrapper(ILevelStateMachine simpleStateMachine)
     {
-		//this.levelStateSwitcher = levelStateSwitcher;
-		//this.levelBootstrapState = levelBootstrapState;
-		//this.levelResearchState = levelResearchState;
 		this.simpleStateMachine = simpleStateMachine;
-
 	}
 
     public void Initialize()
@@ -30,9 +18,6 @@ public class LevelBootstrapper : IInitializable
 
     private void InitLevelStateMachine()
     {
-		//levelStateSwitcher.AddState(levelBootstrapState);
-		//levelStateSwitcher.AddState(levelResearchState);
 		simpleStateMachine.ApplyState(LevelState.Bootstrap);
-		//levelStateSwitcher.Enter<LevelBootstrapState>();
 	}
 }
