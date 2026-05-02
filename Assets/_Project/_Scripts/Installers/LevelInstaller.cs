@@ -65,6 +65,8 @@ public class LevelInstaller : MonoInstaller
             .UnderTransformGroup("Projectiles");
 
         Container.Bind<IPlayerHealth>().To<PlayerHealth>().AsSingle();
+
+        Container.BindInterfacesAndSelfTo<GameCondition>().AsSingle();
     }
 	private void RegisterSimpleStateMachine()
 	{

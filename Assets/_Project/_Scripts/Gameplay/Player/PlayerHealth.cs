@@ -18,9 +18,10 @@ public class PlayerHealth : IPlayerHealth
 		count = Mathf.Clamp(count, 1, maxDamage);
 
 		health -= count;
+		health = Mathf.Clamp(health, 0, maxHealth);
 		OnHealthChanged?.Invoke(health);
 
-		if (health < 0)
+		if (health <= 0)
 		{
 			health = 0;
 			OnDeath?.Invoke();

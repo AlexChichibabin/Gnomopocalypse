@@ -13,16 +13,15 @@ public class PlayerHealthView : MonoBehaviour
     {
         this.health = health;
 
-		health.OnHealthChanged += OnTakeDamage;
+		health.OnHealthChanged += OnHealthChanged;
     }
 	private void OnDestroy()
 	{
-		health.OnHealthChanged -= OnTakeDamage;
+		health.OnHealthChanged -= OnHealthChanged;
 	}
 
-	private void OnTakeDamage(int value)
+	private void OnHealthChanged(int value)
 	{
-		Debug.Log(health.Health);
 		for (int i = 0; i < healthViews.Length; i++)
 		{
 			if (i + 1 == value) healthViews[i].SetActive(true);
