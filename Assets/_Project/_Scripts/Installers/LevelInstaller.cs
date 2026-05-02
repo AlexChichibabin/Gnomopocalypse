@@ -47,6 +47,9 @@ public class LevelInstaller : MonoInstaller
         Container.BindInterfacesAndSelfTo<UnitsFactory>()
             .AsSingle();
 
+        Container.BindInterfacesAndSelfTo<ProjectileSelection>()
+            .AsSingle();
+
         Container.Bind<ICoroutineRunner>()
             .To<CoroutineRunner>()
             .FromNewComponentOnNewGameObject()

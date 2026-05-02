@@ -8,16 +8,19 @@ public class ConfigProvider : IConfigProvider
 	private Dictionary<UnitType, UnitConfig> units;
 	private LevelConfig[] levelList;
 	private UnitConfig[] unitConfigs;
+	private ProjectileConfig[] projectileConfigs;
 	private SpawnRateConfig spawnRateConfig;
 
 	public int LevelAmount => levelList.Length;
 	public UnitConfig[] UnitConfigs => unitConfigs;
+	public ProjectileConfig[] ProjectileConfigs => projectileConfigs;
 	public SpawnRateConfig SpawnRateConfig => spawnRateConfig;
 
 	public void Load()
 	{
 		levelList = Resources.LoadAll<LevelConfig>(AssetAddress.LevelsConfigPath);
 		unitConfigs = Resources.LoadAll<UnitConfig>(AssetAddress.UnitsConfigPath);
+		projectileConfigs = Resources.LoadAll<ProjectileConfig>(AssetAddress.ProjectilesConfigPath);
 		spawnRateConfig = Resources.Load<SpawnRateConfig>(AssetAddress.SpawnRateConfigPath);
 
 		levels = levelList.ToDictionary(x => x.SceneName, x => x);
@@ -56,6 +59,17 @@ public class ConfigProvider : IConfigProvider
 		}
 
 		return unitConfigs[unitConfigs.Length - 1];
+	}
+
+	public ProjectileConfig GetRandomProjectileConfig()
+	{
+		if (projectileConfigs == null || projectileConfigs.Length == 0)
+		{
+			Debug.LogError("[ConfigProvider] Projectile configs are missing");
+			return null;
+		}
+
+		return projectileConfigs[Random.Range(0, projectileConfigs.Length)];
 	}
 
 }

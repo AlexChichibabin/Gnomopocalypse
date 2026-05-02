@@ -4,17 +4,20 @@ using Zenject;
 
 public class ProjectileFactory : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private ProjectileType _projectileType;
     [SerializeField] private Transform _spawnPoint;
-    [SerializeField] private float _spawnDelay = 1f;
 
     private Projectile.ProjectilePool _projectilePool;
+    private ProjectileSelection _projectileSelection;
     private ShootingAnchor _shootingAnchor;
 
     [Inject]
-    private void Construct(Projectile.ProjectilePool projectilePool, [InjectOptional] ShootingAnchor shootingAnchor)
+    private void Construct(
+        Projectile.ProjectilePool projectilePool,
+        ProjectileSelection projectileSelection,
+        [InjectOptional] ShootingAnchor shootingAnchor)
     {
         _projectilePool = projectilePool;
+        _projectileSelection = projectileSelection;
         _shootingAnchor = shootingAnchor;
     }
 
@@ -25,7 +28,15 @@ public class ProjectileFactory : MonoBehaviour, IPointerClickHandler
 
     private Projectile SpawnProjectile()
     {
-        Projectile projectile = _projectilePool.Spawn(_projectileType);
+        ProjectileConfig projectileConfig = _projectileSelection.TakeBottomProjectile();
+
+        if (projectileConfig == null)
+        {
+            Debug.LogError("[ProjectileFactory] Projectile config is missing");
+            return null;
+        }
+
+        Projectile projectile = _projectilePool.Spawn(projectileConfig);
         projectile.transform.position = _spawnPoint.position;
 
         if (_shootingAnchor == null)
@@ -35,7 +46,7 @@ public class ProjectileFactory : MonoBehaviour, IPointerClickHandler
         }
 
         if (projectile.TryGetComponent(out Shooting shooting))
-            shooting.Init(_shootingAnchor.transform);
+            shooting.Init(_shootingAnchor.transform, projectileConfig);
 
         return projectile;
     }
