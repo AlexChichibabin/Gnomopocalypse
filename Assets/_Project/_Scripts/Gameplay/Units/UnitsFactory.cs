@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Zenject;
@@ -13,6 +14,7 @@ public class UnitsFactory : IInitializable, ILateDisposable
     private ILevelStateMachine _levelStateMachine;
     private IUnitTracker _unitTracker;
 
+    public event Action OnAllWavesFinished;
 
     public UnitsFactory(Unit.UnitPool unitPool,
             IConfigProvider configProvider,
@@ -64,19 +66,23 @@ public class UnitsFactory : IInitializable, ILateDisposable
             yield break;
         }
 
-        for (int i = 0; _canSpawn; i++)
+        for (int i = 0; _canSpawn && i < spawnRateSteps.Length; i++)
         {
-            int stepIndex = Mathf.Min(i, spawnRateSteps.Length - 1);
-            SpawnRateStep step = spawnRateSteps[stepIndex];
-            bool isLastStep = stepIndex == spawnRateSteps.Length - 1;
+            SpawnRateStep step = spawnRateSteps[i];
+            bool isLastStep = i == spawnRateSteps.Length - 1;
 
-            Debug.Log($"[UnitsFactory] Step {stepIndex + 1}: {step.UnitsPerMinute} units/minute");
+            Debug.Log($"[UnitsFactory] Step {i + 1}: {step.UnitsPerMinute} units/minute");
 
-            yield return SpawnByStep(step, isLastStep);
+            yield return SpawnByStep(step);
 
             if (_canSpawn && !isLastStep)
                 yield return WaitForNextWavePause(step);
         }
+
+        _spawnRoutine = null;
+
+        if (_canSpawn)
+            OnAllWavesFinished?.Invoke();
     }
 
     private IEnumerator WaitForNextWavePause(SpawnRateStep step)
@@ -88,36 +94,15 @@ public class UnitsFactory : IInitializable, ILateDisposable
         yield return new WaitForSeconds(step.PauseUntilNextWave);
     }
 
-    private IEnumerator SpawnByStep(SpawnRateStep step, bool isLastStep)
+    private IEnumerator SpawnByStep(SpawnRateStep step)
     {
         if (step.UnitsPerMinute <= 0)
         {
-            if (isLastStep)
-            {
-                while (_canSpawn)
-                    yield return null;
-            }
-            else
-            {
-                yield return new WaitForSeconds(step.Minute * 60f);
-            }
-
+            yield return new WaitForSeconds(step.Minute * 60f);
             yield break;
         }
 
         float spawnDelay = 60f / step.UnitsPerMinute;
-
-        if (isLastStep)
-        {
-            while (_canSpawn)
-            {
-                yield return new WaitForSeconds(spawnDelay);
-                SpawnUnit();
-            }
-
-            yield break;
-        }
-
         float spawnCount = step.Minute * step.UnitsPerMinute;
         float elapsedTime = 0f;
 
@@ -152,7 +137,7 @@ public class UnitsFactory : IInitializable, ILateDisposable
 	}
 	private Vector3 GetRandomSpawnPosition()
     {
-        Vector2 offset = Random.insideUnitCircle * _spawnSettings.SpawnRadius;
+        Vector2 offset = UnityEngine.Random.insideUnitCircle * _spawnSettings.SpawnRadius;
 
         return _spawnSettings.SpawnPoint + new Vector3(offset.x, offset.y, 0);
     }
