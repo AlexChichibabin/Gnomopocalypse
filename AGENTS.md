@@ -24,9 +24,19 @@
 - `PrototypeInstaller` is used for prototype-only Zenject bindings.
 - Prototype pooled objects use nested `MonoMemoryPool<T>` classes, for example `Unit.UnitPool`, `Tower.TowerPool`, and `Projectile.ProjectilePool`.
 - Prototype factories currently spawn pooled objects directly and may be intentionally rough or test-driven.
-- `SpawnRateConfig` and `SpawnRateStep` describe prototype unit spawn pacing. In `SpawnRateStep`, `Minute` means step duration in minutes, and `UnitsPerMinute` means spawn frequency during that step.
 - `ProjectileFactory` is currently click-driven via `IPointerClickHandler`; older coroutine-driven spawn logic may be commented out for testing.
 - `Shooting` is a slingshot-style projectile controller. It exposes `IsMoving`, which becomes true after release.
+
+## Current Gameplay Patterns
+
+- Production gameplay services are bound through `GameInstaller` and `LevelInstaller` using Zenject.
+- `GameInstaller` binds global services such as `IConfigProvider`, `IInputService`, `IPlayerProgress`, and `IGameStateMachine`.
+- `LevelInstaller` binds level services such as `ILevelStateMachine`, `UnitsFactory`, `ICoroutineRunner`, `UnitsSpawnSettings`, `ShootingAnchor`, and memory pools for `Unit` and `Projectile`.
+- `UnitsFactory` starts spawning only after `ILevelStateMachine` enters `LevelState.Gameplay`.
+- `UnitsFactory` uses `SpawnRateConfig` from `Resources/Configs/Units/SpawnRateConfig` and random `UnitConfig` assets from `Resources/Configs/Units`.
+- In `SpawnRateStep`, `Minute` means step duration in minutes, `UnitsPerMinute` means spawn frequency during that step, and `PauseUntilNextWave` means the pause in seconds after that step before the next wave. No pause is applied after the last step; the last step repeats indefinitely.
+- `UnitsSpawnSettings` provides the spawn center and radius. If `_spawnPoint` is assigned, spawned units use that transform position; otherwise they use the settings object's own position.
+- `ProjectileSelection` manages the current projectile stock as a queue of `ProjectileConfig` assets from `Resources/Configs/Projectiles`. It fills the stock at level start, `ProjectileFactory` takes the bottom/first config when spawning, and `ProjectileSelection` immediately adds a new random config to the top/end.
 
 ## Coding Style
 
@@ -46,7 +56,8 @@
 - For pooled MonoBehaviours, prefer Zenject `MonoMemoryPool<T>` and keep spawn/despawn lifecycle methods on the pooled component.
 - When adding prototype pool bindings, bind them in `PrototypeInstaller` unless the user asks for production integration.
 - For frame-based movement, use `Time.deltaTime`; for Rigidbody/Rigidbody2D movement, prefer physics-friendly movement in `FixedUpdate`.
-- For `OnPointerClick`, make sure the clicked object has an appropriate collider/raycast target, an `EventSystem` exists, and the camera has the needed raycaster for world objects.
+- For `OnPointerClick` on world-space 2D objects, make sure the clicked object has a `Collider2D`, an `EventSystem` exists, and the camera has a `Physics2DRaycaster` whose event mask includes the object's layer.
+- For UI clicks, use a `GraphicRaycaster` on the canvas instead of a physics raycaster.
 - For `OnTriggerEnter2D`, both objects need `Collider2D`, at least one collider must be a trigger, and at least one object needs `Rigidbody2D`.
 
 ## Verification

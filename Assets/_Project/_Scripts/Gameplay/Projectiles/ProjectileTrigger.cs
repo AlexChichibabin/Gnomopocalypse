@@ -5,9 +5,9 @@ public class ProjectileTrigger : MonoBehaviour
 {
     private ProjectileType _projectileType;
 
-    public void Init(ProjectileType projectileType)
+    public void Init(ProjectileConfig projectileConfig)
     {
-        _projectileType = projectileType;
+        _projectileType = projectileConfig.ProjectileType;
     }
 
     void Awake()

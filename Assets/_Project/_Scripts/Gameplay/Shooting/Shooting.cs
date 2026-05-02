@@ -43,9 +43,11 @@ public class Shooting : MonoBehaviour
         UnsubscribeInput();
     }
 
-    public void Init(Transform anchor)
+    public void Init(Transform anchor, ProjectileConfig projectileConfig)
     {
         _anchor = anchor;
+        _power = projectileConfig.ShootPower;
+        _maxDragDistance = projectileConfig.MaxDragDistance;
         IsMoving = false;
         _dragging = false;
 

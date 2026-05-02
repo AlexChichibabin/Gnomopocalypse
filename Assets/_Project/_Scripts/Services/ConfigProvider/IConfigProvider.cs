@@ -7,7 +7,9 @@
 	LevelConfig GetLevel(string name);
 
 	UnitConfig[] UnitConfigs { get; }
+	ProjectileConfig[] ProjectileConfigs { get; }
 	SpawnRateConfig SpawnRateConfig { get; }
 	UnitConfig GetRandomUnitConfig();
+	ProjectileConfig GetRandomProjectileConfig();
 	UnitConfig GetUnit(UnitType unitType);
 }
