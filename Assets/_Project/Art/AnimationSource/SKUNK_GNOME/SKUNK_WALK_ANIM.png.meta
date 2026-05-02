@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 34b6da30173a21a46905481aa398deab
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8260465327778337401
+    second: SKUNK_WALK_ANIM_0
+  - first:
+      213: -4741765447265115680
+    second: SKUNK_WALK_ANIM_1
+  - first:
+      213: 2545923670342693565
+    second: SKUNK_WALK_ANIM_2
+  - first:
+      213: -7072809350054649583
+    second: SKUNK_WALK_ANIM_3
+  - first:
+      213: -7414203964226647425
+    second: SKUNK_WALK_ANIM_4
+  - first:
+      213: 155026467145909798
+    second: SKUNK_WALK_ANIM_5
+  - first:
+      213: 7384755767207065381
+    second: SKUNK_WALK_ANIM_6
+  - first:
+      213: 3772522657924410664
+    second: SKUNK_WALK_ANIM_7
+  - first:
+      213: -625187668381126889
+    second: SKUNK_WALK_ANIM_8
+  - first:
+      213: -4766933684664645606
+    second: SKUNK_WALK_ANIM_9
+  - first:
+      213: 4210995386498462864
+    second: SKUNK_WALK_ANIM_10
+  - first:
+      213: -5160450927356026009
+    second: SKUNK_WALK_ANIM_11
+  - first:
+      213: 5152356372803390188
+    second: SKUNK_WALK_ANIM_12
+  - first:
+      213: -5688766637796718015
+    second: SKUNK_WALK_ANIM_13
+  - first:
+      213: -1839506068075458203
+    second: SKUNK_WALK_ANIM_14
+  - first:
+      213: -8799227811164498565
+    second: SKUNK_WALK_ANIM_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 36
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d675adc8eec5d80800000000000000
+      internalID: -8260465327778337401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 36
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e1aa8bd27dd13eb0800000000000000
+      internalID: -4741765447265115680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_2
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 37
+        width: 35
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db2f80cd610f45320800000000000000
+      internalID: 2545923670342693565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_3
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 0
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1116ee59e5558dd90800000000000000
+      internalID: -7072809350054649583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_4
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 39
+        width: 35
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7a4af3d6c47b1990800000000000000
+      internalID: -7414203964226647425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_5
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 0
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626040120c3c62200800000000000000
+      internalID: 155026467145909798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_6
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 38
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 527f4618e3ceb7660800000000000000
+      internalID: 7384755767207065381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_7
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 0
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82d62b4ae51ba5430800000000000000
+      internalID: 3772522657924410664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_8
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 37
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71f2034c023e257f0800000000000000
+      internalID: -625187668381126889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_9
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 39
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1848b1f11378ddb0800000000000000
+      internalID: -4766933684664645606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_10
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 0
+        width: 26
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 094bc034ef5707a30800000000000000
+      internalID: 4210995386498462864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_11
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 36
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 763eb1a09356268b0800000000000000
+      internalID: -5160450927356026009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_12
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 0
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cea8a2d92d8d08740800000000000000
+      internalID: 5152356372803390188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_13
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14a880022e07d01b0800000000000000
+      internalID: -5688766637796718015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_14
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 561df2a2af2c876e0800000000000000
+      internalID: -1839506068075458203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SKUNK_WALK_ANIM_15
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 0
+        width: 25
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b755dc11decd2e580800000000000000
+      internalID: -8799227811164498565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SKUNK_WALK_ANIM_0: -8260465327778337401
+      SKUNK_WALK_ANIM_1: -4741765447265115680
+      SKUNK_WALK_ANIM_10: 4210995386498462864
+      SKUNK_WALK_ANIM_11: -5160450927356026009
+      SKUNK_WALK_ANIM_12: 5152356372803390188
+      SKUNK_WALK_ANIM_13: -5688766637796718015
+      SKUNK_WALK_ANIM_14: -1839506068075458203
+      SKUNK_WALK_ANIM_15: -8799227811164498565
+      SKUNK_WALK_ANIM_2: 2545923670342693565
+      SKUNK_WALK_ANIM_3: -7072809350054649583
+      SKUNK_WALK_ANIM_4: -7414203964226647425
+      SKUNK_WALK_ANIM_5: 155026467145909798
+      SKUNK_WALK_ANIM_6: 7384755767207065381
+      SKUNK_WALK_ANIM_7: 3772522657924410664
+      SKUNK_WALK_ANIM_8: -625187668381126889
+      SKUNK_WALK_ANIM_9: -4766933684664645606
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
