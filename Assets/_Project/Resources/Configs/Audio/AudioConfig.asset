@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dcb3b32849293b4b9c6851016a8e77c, type: 3}
+  m_Name: AudioConfig
+  m_EditorClassIdentifier: Assembly-CSharp::AudioConfig
+  Sounds:
+  - Id: 0
+    Clip: {fileID: 0}
+    Volume: 1
+  - Id: 1
+    Clip: {fileID: 0}
+    Volume: 1
+  - Id: 2
+    Clip: {fileID: 0}
+    Volume: 1
+  - Id: 3
+    Clip: {fileID: 0}
+    Volume: 1
+  - Id: 4
+    Clip: {fileID: 0}
+    Volume: 1
+  - Id: 5
+    Clip: {fileID: 0}
+    Volume: 1
+  - Id: 6
+    Clip: {fileID: 0}
+    Volume: 1
+  Musics:
+  - Id: 0
+    Clip: {fileID: 8300000, guid: c5a6af7adb029df4ba0967bc4de9e7ac, type: 3}
+    Volume: 1
+  - Id: 1
+    Clip: {fileID: 0}
+    Volume: 1
+  - Id: 2
+    Clip: {fileID: 0}
+    Volume: 1
+  - Id: 3
+    Clip: {fileID: 0}
+    Volume: 1
+  SfxMixerGroup: {fileID: -927289537027501413, guid: 1247bbc23ecd9e843a1ad960f7858537, type: 2}
+  MusicMixerGroup: {fileID: -156469527456860277, guid: 1247bbc23ecd9e843a1ad960f7858537, type: 2}

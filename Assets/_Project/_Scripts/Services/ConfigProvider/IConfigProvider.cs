@@ -5,6 +5,7 @@
 	LevelConfig[] GetLevelList();
 	LevelConfig GetLevel(int index);
 	LevelConfig GetLevel(string name);
+	AudioConfig GetAudio();
 
 	UnitConfig[] UnitConfigs { get; }
 	ProjectileConfig[] ProjectileConfigs { get; }
@@ -12,4 +13,5 @@
 	UnitConfig GetRandomUnitConfig();
 	ProjectileConfig GetRandomProjectileConfig();
 	UnitConfig GetUnit(UnitType unitType);
+
 }

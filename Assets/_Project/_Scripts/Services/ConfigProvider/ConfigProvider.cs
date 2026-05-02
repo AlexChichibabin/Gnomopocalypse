@@ -10,6 +10,7 @@ public class ConfigProvider : IConfigProvider
 	private UnitConfig[] unitConfigs;
 	private ProjectileConfig[] projectileConfigs;
 	private SpawnRateConfig spawnRateConfig;
+	private AudioConfig audioConfig;
 
 	public int LevelAmount => levelList.Length;
 	public UnitConfig[] UnitConfigs => unitConfigs;
@@ -22,6 +23,7 @@ public class ConfigProvider : IConfigProvider
 		unitConfigs = Resources.LoadAll<UnitConfig>(AssetAddress.UnitsConfigPath);
 		projectileConfigs = Resources.LoadAll<ProjectileConfig>(AssetAddress.ProjectilesConfigPath);
 		spawnRateConfig = Resources.Load<SpawnRateConfig>(AssetAddress.SpawnRateConfigPath);
+		audioConfig = Resources.Load<AudioConfig>(AssetAddress.AudioConfigPath);
 
 		levels = levelList.ToDictionary(x => x.SceneName, x => x);
 		units = unitConfigs.ToDictionary(x => x.UnitType, x => x);
@@ -30,6 +32,7 @@ public class ConfigProvider : IConfigProvider
 	public LevelConfig GetLevel(int index) => levelList[index];
 	public LevelConfig GetLevel(string name) => levels[name];
 	public UnitConfig GetUnit(UnitType unitType) => units[unitType];
+	public AudioConfig GetAudio() => audioConfig;
 
 	public UnitConfig GetRandomUnitConfig()
 	{

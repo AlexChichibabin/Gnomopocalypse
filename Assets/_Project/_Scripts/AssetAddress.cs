@@ -5,4 +5,5 @@ public class AssetAddress
 	public const string UnitsConfigPath = "Configs/Units";
 	public const string SpawnRateConfigPath = "Configs/Units/SpawnRateConfig";
 	public const string ProjectilesConfigPath = "Configs/Projectiles";
+	public const string AudioConfigPath = "Configs/Audio/AudioConfig";
 }
