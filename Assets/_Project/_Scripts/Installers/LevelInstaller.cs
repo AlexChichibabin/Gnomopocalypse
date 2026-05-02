@@ -63,6 +63,8 @@ public class LevelInstaller : MonoInstaller
         Container.BindMemoryPool<Projectile, Projectile.ProjectilePool>()
             .FromComponentInNewPrefab(_projectilePrefab)
             .UnderTransformGroup("Projectiles");
+
+        Container.Bind<IPlayerHealth>().To<PlayerHealth>().AsSingle();
     }
 	private void RegisterSimpleStateMachine()
 	{
