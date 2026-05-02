@@ -67,6 +67,8 @@ public class LevelInstaller : MonoInstaller
         Container.Bind<IPlayerHealth>().To<PlayerHealth>().AsSingle();
 
         Container.BindInterfacesAndSelfTo<GameCondition>().AsSingle();
+        
+        Container.Bind<IUnitTracker>().To<UnitTracker>().AsSingle();
     }
 	private void RegisterSimpleStateMachine()
 	{

@@ -6,19 +6,27 @@ public class GameCondition : IGameCondition, IDisposable
 
 	private IPlayerHealth heatlh;
 	private ILevelStateMachine levelStateMachine;
+	private IUnitTracker unitTracker;
 	public GameCondition(
 		IPlayerHealth heatlh, 
-		ILevelStateMachine levelStateMachine)
+		ILevelStateMachine levelStateMachine,
+		IUnitTracker unitTracker)
 	{
 		this.heatlh = heatlh;
 		this.levelStateMachine = levelStateMachine;
+		this.unitTracker = unitTracker;
 
 		heatlh.OnDeath += OnPlayerDeath;
+		unitTracker.OnAllUnitDeath += OnAllUnitsDeath;
 	}
 
 	public void Init()
 	{
 		
+	}
+	private void OnAllUnitsDeath()
+	{
+		levelStateMachine.ApplyState(LevelState.Win);
 	}
 
 	private void OnPlayerDeath()
@@ -29,5 +37,6 @@ public class GameCondition : IGameCondition, IDisposable
 	public void Dispose()
 	{
 		heatlh.OnDeath -= OnPlayerDeath;
+		unitTracker.OnAllUnitDeath -= OnAllUnitsDeath;
 	}
 }

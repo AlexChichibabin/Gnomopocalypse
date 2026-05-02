@@ -20,15 +20,18 @@ public class LevelStateMachine : ILevelStateMachine
 	private IConfigProvider configProvider;
 	private IInputService inputService;
 	private IPlayerHealth playerHealth;
+	private IUnitTracker unitTracker;
 
 	public LevelStateMachine(
 		IConfigProvider configProvider,
 		IInputService inputService,
-		IPlayerHealth playerHealth)
+		IPlayerHealth playerHealth,
+		IUnitTracker unitTracker)
 	{
 		this.configProvider = configProvider;
 		this.inputService = inputService;
 		this.playerHealth = playerHealth;
+		this.unitTracker = unitTracker;
 	}
 
 	public void ApplyState(LevelState state)
@@ -69,6 +72,8 @@ public class LevelStateMachine : ILevelStateMachine
 		string sceneName = SceneManager.GetActiveScene().name;
 		LevelConfig levelConfig = configProvider.GetLevel(sceneName);
 		playerHealth.RestoreHealth();
+		unitTracker.Init();
+
 
 		StateChanged?.Invoke(currentState);
 

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LevelConfig
   m_EditorClassIdentifier: Assembly-CSharp::LevelConfig
   SceneName: GameplayScene
-  HeroSpawnPoint: {x: 0, y: 0, z: 0}
+  UnitCountToWin: 5
   enemySpawnerDatas: []

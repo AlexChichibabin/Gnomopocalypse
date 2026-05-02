@@ -11,19 +11,22 @@ public class UnitsFactory : IInitializable, ILateDisposable
     private Coroutine _spawnRoutine;
     private bool _canSpawn;
     private ILevelStateMachine _levelStateMachine;
+    private IUnitTracker _unitTracker;
 
 
     public UnitsFactory(Unit.UnitPool unitPool,
             IConfigProvider configProvider,
             ICoroutineRunner coroutineRunner,
             ILevelStateMachine levelStateMachine,
-            UnitsSpawnSettings spawnSettings)
+            UnitsSpawnSettings spawnSettings,
+			IUnitTracker unitTracker)
     {
         _unitPool = unitPool;
         _configProvider = configProvider;
         _coroutineRunner = coroutineRunner;
         _levelStateMachine = levelStateMachine;
         _spawnSettings = spawnSettings;
+        _unitTracker = unitTracker;
     }
 
     public void Initialize()
@@ -139,11 +142,15 @@ public class UnitsFactory : IInitializable, ILateDisposable
             return;
 
         Unit unit = _unitPool.Spawn(unitConfig);
-        unit.SetPool(_unitPool);
+        unit.SetPool(this);
         unit.transform.position = GetRandomSpawnPosition();
     }
-
-    private Vector3 GetRandomSpawnPosition()
+	public void DespawnUnit(Unit unit)
+	{
+        _unitPool.Despawn(unit);
+        _unitTracker.AddUnitDeath();
+	}
+	private Vector3 GetRandomSpawnPosition()
     {
         Vector2 offset = Random.insideUnitCircle * _spawnSettings.SpawnRadius;
 

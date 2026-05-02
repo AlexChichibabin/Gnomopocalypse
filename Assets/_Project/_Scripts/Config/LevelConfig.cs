@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelConfig : ScriptableObject
 {
 	public string SceneName;
-	//public Vector3 FinishPoint;
+	public int UnitCountToWin;
 
 	public List<EnemySpawnerData> enemySpawnerDatas;
 }

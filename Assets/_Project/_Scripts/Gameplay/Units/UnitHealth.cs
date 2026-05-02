@@ -43,7 +43,7 @@ public class UnitHealth : MonoBehaviour
     }
 
     private float GetDamageFromPercent(float percent) =>
-        _startHealth * percent / 100f;
+        _startHealth * percent / 50f;
 
     private void CheckHealth()
     {

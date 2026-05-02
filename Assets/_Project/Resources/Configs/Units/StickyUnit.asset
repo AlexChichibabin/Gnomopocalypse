@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StickyUnit
   m_EditorClassIdentifier: Assembly-CSharp::UnitConfig
   _unitType: 3
-  _startHealth: 120
+  _startHealth: 24
   _startMoveSpeed: 1
   _mainDamagePercent: 25
   _secondaryDamagePercent: 10
