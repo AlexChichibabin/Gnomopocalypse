@@ -75,4 +75,33 @@ public class ConfigProvider : IConfigProvider
 		return projectileConfigs[Random.Range(0, projectileConfigs.Length)];
 	}
 
+    public UnitConfig GetRandomUnitMutationConfig()
+    {
+       if (unitConfigs == null || unitConfigs.Length == 0)
+		{
+			Debug.LogError("[ConfigProvider] Unit configs are missing");
+			return null;
+		}
+
+		float totalWeight = unitConfigs.Sum(x => Mathf.Max(0, x.SpawnProbability));
+
+		if (totalWeight <= 0)
+		{
+			Debug.LogWarning("[ConfigProvider] Unit spawn probabilities are zero. Returning first unit config");
+			return unitConfigs[0];
+		}
+
+		float randomValue = Random.Range(0, totalWeight);
+		float currentWeight = 0f;
+
+		foreach (UnitConfig unitConfig in unitConfigs)
+		{
+			currentWeight += Mathf.Max(0, unitConfig.SpawnProbability);
+
+			if (randomValue <= currentWeight)
+				return unitConfig;
+		}
+
+		return unitConfigs[unitConfigs.Length - 1];
+    }
 }
