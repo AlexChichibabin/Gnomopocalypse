@@ -75,7 +75,7 @@ public class LevelStateMachine : ILevelStateMachine
 		if (currentState != LevelState.Bootstrap) return;
 
 		Debug.Log("LEVEL: Gameplay");
-		currentState = LevelState.Bootstrap;
+		currentState = LevelState.Gameplay;
 
 		inputService.EnableGameplay();
 

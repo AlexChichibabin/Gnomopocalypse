@@ -15,7 +15,10 @@ MonoBehaviour:
   _spawnRateSteps:
   - _minute: 0.25
     _unitsPerMinute: 15
+    _pauseUntilNextWave: 5
   - _minute: 0.5
-    _unitsPerMinute: 60
+    _unitsPerMinute: 25
+    _pauseUntilNextWave: 5
   - _minute: 1
-    _unitsPerMinute: 120
+    _unitsPerMinute: 50
+    _pauseUntilNextWave: 5
