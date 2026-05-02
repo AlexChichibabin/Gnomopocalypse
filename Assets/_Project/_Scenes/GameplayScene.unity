@@ -286,9 +286,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.111
       objectReference: {fileID: 0}
+    - target: {fileID: 5864155321364656380, guid: 45780a83097c822429a554e5f9f7227a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.5546875
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864155321364656380, guid: 45780a83097c822429a554e5f9f7227a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 7206584913245880584, guid: 45780a83097c822429a554e5f9f7227a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.48
+      value: 0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206584913245880584, guid: 45780a83097c822429a554e5f9f7227a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.004
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -334,7 +346,7 @@ RectTransform:
   m_GameObject: {fileID: 167674051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8309456, y: 0.8309456, z: 0.8309456}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1145596293}
@@ -366,7 +378,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.67058825, g: 0.67058825, b: 0.67058825, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -899,10 +911,10 @@ RectTransform:
   - {fileID: 1778665740}
   m_Father: {fileID: 1063827590}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.32000002, y: 0.17562965}
-  m_AnchorMax: {x: 0.67968744, y: 0.82881486}
-  m_AnchoredPosition: {x: 0, y: -2.5}
-  m_SizeDelta: {x: -3.9846191, y: -1.3602905}
+  m_AnchorMin: {x: 0.32000002, y: 0.26540744}
+  m_AnchorMax: {x: 0.6786042, y: 0.77900004}
+  m_AnchoredPosition: {x: 1, y: 0.5}
+  m_SizeDelta: {x: -1.9846001, y: 0.58039856}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &946594375
 MonoBehaviour:
@@ -958,12 +970,12 @@ MonoBehaviour:
     m_Left: 0
     m_Right: 0
     m_Top: 0
-    m_Bottom: 92
+    m_Bottom: 51
   m_ChildAlignment: 7
   m_StartCorner: 2
   m_StartAxis: 0
   m_CellSize: {x: 278.38, y: 100}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: -18.37, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &1063827589
@@ -2265,7 +2277,7 @@ RectTransform:
   m_GameObject: {fileID: 1778665739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8309456, y: 0.8309456, z: 0.8309456}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1386078588}
@@ -2297,7 +2309,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2580,8 +2592,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 522, y: 459}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchoredPosition: {x: 502, y: 444}
+  m_SizeDelta: {x: 305.0868, y: 152.5434}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885839559
 MonoBehaviour:
@@ -2763,7 +2775,7 @@ PrefabInstance:
     - target: {fileID: 2997308114689498395, guid: f4ac349503bb5534b9a5fb6729e00d73, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -7047459258379864874, guid: dcee83317ba2b344c8161d0d4e756316, type: 3}
+      objectReference: {fileID: -370374159531986394, guid: e9b5bc6ca9b4ca94eb469c78f42b1c0f, type: 3}
     - target: {fileID: 3314079428798513039, guid: f4ac349503bb5534b9a5fb6729e00d73, type: 3}
       propertyPath: m_Name
       value: ProjectileSelectionCanvas
