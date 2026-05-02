@@ -74,3 +74,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e202cb170462c641b550e4dbcf00a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameInstaller
+  audioMixer: {fileID: 24100000, guid: 1247bbc23ecd9e843a1ad960f7858537, type: 2}
+  sfxMixerGroup: {fileID: -927289537027501413, guid: 1247bbc23ecd9e843a1ad960f7858537, type: 2}
+  musicMixerGroup: {fileID: -156469527456860277, guid: 1247bbc23ecd9e843a1ad960f7858537, type: 2}

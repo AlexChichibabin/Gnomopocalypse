@@ -18,13 +18,16 @@ public class GameStateMachine : IGameStateMachine
 	private GameState currentState = GameState.None;
 	private IConfigProvider configProvider;
 	private IPlayerProgress progress;
+	private IAudioService audioService;
 
 	public GameStateMachine(
 		IConfigProvider configProvider,
-		IPlayerProgress progress)
+		IPlayerProgress progress,
+		IAudioService audioService)
 	{
 		this.configProvider = configProvider;
 		this.progress = progress;
+		this.audioService = audioService;
 	}
 
 	public void ApplyState(GameState state)
@@ -63,6 +66,7 @@ public class GameStateMachine : IGameStateMachine
 
 		configProvider.Load();
 		progress.Init();
+		audioService.Init();
 
 		var sceneName = SceneManager.GetActiveScene().name;
 		
