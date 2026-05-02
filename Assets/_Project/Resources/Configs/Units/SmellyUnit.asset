@@ -19,4 +19,4 @@ MonoBehaviour:
   _secondaryDamagePercent: 10
   _spawnProbability: 25
   _transformationProbability: 40
-  _minStayTime: 20
+  _minStayTime: 5
