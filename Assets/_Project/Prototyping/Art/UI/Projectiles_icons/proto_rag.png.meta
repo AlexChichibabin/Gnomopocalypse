@@ -142,10 +142,10 @@ TextureImporter:
       name: proto_rag_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1254
-        height: 1254
+        x: 43
+        y: 121
+        width: 1162
+        height: 1126
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

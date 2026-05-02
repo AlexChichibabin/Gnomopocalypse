@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 using Zenject;
 
 public class ProjectileSelection : IInitializable
@@ -9,6 +10,7 @@ public class ProjectileSelection : IInitializable
     private readonly List<ProjectileConfig> _projectileStock = new();
 
     public IReadOnlyList<ProjectileConfig> ProjectileStock => _projectileStock;
+    public event Action<IReadOnlyList<ProjectileConfig>> StockChanged;
 
     public ProjectileSelection(IConfigProvider configProvider)
     {
@@ -21,6 +23,8 @@ public class ProjectileSelection : IInitializable
 
         for (int i = 0; i < StockSize; i++)
             AddRandomProjectile();
+
+        StockChanged?.Invoke(_projectileStock);
     }
 
     public ProjectileConfig TakeBottomProjectile()
@@ -34,6 +38,7 @@ public class ProjectileSelection : IInitializable
         ProjectileConfig projectileConfig = _projectileStock[0];
         _projectileStock.RemoveAt(0);
         AddRandomProjectile();
+        StockChanged?.Invoke(_projectileStock);
 
         return projectileConfig;
     }
