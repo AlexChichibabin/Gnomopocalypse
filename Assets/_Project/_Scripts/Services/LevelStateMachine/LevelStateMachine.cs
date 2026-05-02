@@ -19,13 +19,16 @@ public class LevelStateMachine : ILevelStateMachine
 	private LevelState currentState = LevelState.None;
 	private IConfigProvider configProvider;
 	private IInputService inputService;
+	private IPlayerHealth playerHealth;
 
 	public LevelStateMachine(
 		IConfigProvider configProvider,
-		IInputService inputService)
+		IInputService inputService,
+		IPlayerHealth playerHealth)
 	{
 		this.configProvider = configProvider;
 		this.inputService = inputService;
+		this.playerHealth = playerHealth;
 	}
 
 	public void ApplyState(LevelState state)
@@ -65,6 +68,7 @@ public class LevelStateMachine : ILevelStateMachine
 
 		string sceneName = SceneManager.GetActiveScene().name;
 		LevelConfig levelConfig = configProvider.GetLevel(sceneName);
+		playerHealth.RestoreHealth();
 
 		StateChanged?.Invoke(currentState);
 
