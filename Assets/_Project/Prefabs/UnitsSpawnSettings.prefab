@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitsSpawnSettings
   _spawnPoint: {fileID: 5936366552329674876}
-  _spawnRadius: 1.5
+  _spawnRadius: 0.5
 --- !u!1 &7187518719764800314
 GameObject:
   m_ObjectHideFlags: 0

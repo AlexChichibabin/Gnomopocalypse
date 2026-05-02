@@ -2,17 +2,43 @@ using UnityEngine;
 
 public class UnitView : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private GameObject _smelly;
+    [SerializeField] private GameObject _dirty;
+    [SerializeField] private GameObject _leaking;
+    [SerializeField] private GameObject _sticky;
 
     public void Init(UnitType unitType)
     {
-        _spriteRenderer.color = unitType switch
+        DisableAll();
+
+        switch (unitType)
         {
-            UnitType.Smelly => Color.green,
-            UnitType.Dirty => new Color(0.8f, 0.45f, 0.2f),
-            UnitType.Leaking => Color.cyan,
-            UnitType.Sticky => Color.magenta,
-            _ => Color.white
-        };
+            case UnitType.Smelly:
+                SetActive(_smelly, true);
+                break;
+            case UnitType.Dirty:
+                SetActive(_dirty, true);
+                break;
+            case UnitType.Leaking:
+                SetActive(_leaking, true);
+                break;
+            case UnitType.Sticky:
+                SetActive(_sticky, true);
+                break;
+        }
+    }
+
+    private void DisableAll()
+    {
+        SetActive(_smelly, false);
+        SetActive(_dirty, false);
+        SetActive(_leaking, false);
+        SetActive(_sticky, false);
+    }
+
+    private void SetActive(GameObject unitView, bool isActive)
+    {
+        if (unitView != null)
+            unitView.SetActive(isActive);
     }
 }
