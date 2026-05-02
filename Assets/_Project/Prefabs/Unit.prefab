@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6440030918383970869
 Transform:
   m_ObjectHideFlags: 0
@@ -131,7 +131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7435318885724518965
 Transform:
   m_ObjectHideFlags: 0
@@ -842,7 +842,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a59bc929fff40346a2ac0e22516f2c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitView
-  _spriteRenderer: {fileID: 1324800161090597685}
   _smelly: {fileID: 6659844043768254564}
   _dirty: {fileID: 7636159963577912736}
   _leaking: {fileID: 549210123371712102}
