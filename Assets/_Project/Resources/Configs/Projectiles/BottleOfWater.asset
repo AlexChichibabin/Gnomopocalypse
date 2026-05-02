@@ -15,5 +15,5 @@ MonoBehaviour:
   _projectileType: 3
   _shootPower: 12
   _maxDragDistance: 3
-  _uiSprite: {fileID: -5841750352141718211, guid: 3bd4e204fd16d134fa1d37ccf17d5393, type: 3}
-  _objSprite: {fileID: -5841750352141718211, guid: 3bd4e204fd16d134fa1d37ccf17d5393, type: 3}
+  _uiSprite: {fileID: -5755541774972867788, guid: de74c65b7dab8aa4597fe8cacdd80f48, type: 3}
+  _objSprite: {fileID: -5755541774972867788, guid: de74c65b7dab8aa4597fe8cacdd80f48, type: 3}

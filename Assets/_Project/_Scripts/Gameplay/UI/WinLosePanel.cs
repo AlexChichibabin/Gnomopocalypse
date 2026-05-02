@@ -14,14 +14,17 @@ public class WinLosePanel : MonoBehaviour
 
 	private ILevelStateMachine levelStateMachine;
 	private IGameStateMachine gameStateMachine;
+	private IPlayerProgress progress;
 
 	[Inject]
     public void Construct(
 		ILevelStateMachine levelStateMachine,
-		IGameStateMachine gameStateMachine)
+		IGameStateMachine gameStateMachine,
+		IPlayerProgress progress)
     {
         this.levelStateMachine = levelStateMachine;
 		this.gameStateMachine = gameStateMachine;
+		this.progress = progress;
 
         levelStateMachine.StateChanged += OnLevelEnd;
 
@@ -33,6 +36,7 @@ public class WinLosePanel : MonoBehaviour
 	private void OnDestroy()
 	{
 		levelStateMachine.StateChanged -= OnLevelEnd;
+		nextLevelButton.onClick.RemoveAllListeners();
 	}
 	private void OnLevelEnd(LevelState state)
     {
@@ -42,7 +46,15 @@ public class WinLosePanel : MonoBehaviour
         {
 			panelImage.sprite = winPanelSprite;
 			nextLevelText.text = "ƒ¿À≈≈";
-			nextLevelButton.onClick.AddListener(LoadNext);
+
+			var sceneName = SceneManager.GetActiveScene().name;
+			if (sceneName == progress.GetNextLevelConfig().name)
+			{
+				nextLevelButton.gameObject.SetActive(true);
+				nextLevelButton.onClick.AddListener(LoadNext);
+			}
+			else
+				nextLevelButton.gameObject.SetActive(false);
 		}
         else
         {
@@ -55,6 +67,7 @@ public class WinLosePanel : MonoBehaviour
 	}
 	private void LoadNext()
 	{
+		
 		gameStateMachine.ApplyState(GameState.LoadLevel);
 		nextLevelButton.onClick.RemoveAllListeners();
 	}
