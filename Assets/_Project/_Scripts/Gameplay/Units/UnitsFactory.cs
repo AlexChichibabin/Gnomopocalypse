@@ -139,6 +139,7 @@ public class UnitsFactory : IInitializable, ILateDisposable
             return;
 
         Unit unit = _unitPool.Spawn(unitConfig);
+        unit.SetPool(_unitPool);
         unit.transform.position = GetRandomSpawnPosition();
     }
 

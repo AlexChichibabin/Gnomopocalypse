@@ -8,10 +8,12 @@ public class Unit : MonoBehaviour
     [SerializeField] private UnitHealth _unitHealth;
     [SerializeField] private UnitView _unitView;
 
-    public UnitHealth Damageble => _unitHealth;
+    private UnitPool pool;
+
+	public UnitHealth Damageble => _unitHealth;
 
     public UnitType UnitType { get; private set; }
-
+    public void SetPool(UnitPool pool) => this.pool = pool;
     private void OnSpawned(UnitConfig config)
     {
         UnitType = config.UnitType;
@@ -25,7 +27,9 @@ public class Unit : MonoBehaviour
 
     private void OnZeroHealth()
     {
-        //todo death
+        Debug.Log("Gnome is dead");
+
+        pool.Despawn(this);
     }
 
     private void OnDespawned()
