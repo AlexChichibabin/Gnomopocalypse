@@ -166,6 +166,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -173,12 +199,12 @@ TextureImporter:
       name: WET_DEATH_0
       rect:
         serializedVersion: 2
-        x: 17
+        x: 0
         y: 0
-        width: 30
-        height: 25
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -195,12 +221,12 @@ TextureImporter:
       name: WET_DEATH_1
       rect:
         serializedVersion: 2
-        x: 82
+        x: 64
         y: 0
-        width: 29
-        height: 27
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -217,12 +243,12 @@ TextureImporter:
       name: WET_DEATH_2
       rect:
         serializedVersion: 2
-        x: 146
+        x: 128
         y: 0
-        width: 30
-        height: 28
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -239,12 +265,12 @@ TextureImporter:
       name: WET_DEATH_3
       rect:
         serializedVersion: 2
-        x: 210
+        x: 192
         y: 0
-        width: 32
-        height: 25
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -261,12 +287,12 @@ TextureImporter:
       name: WET_DEATH_4
       rect:
         serializedVersion: 2
-        x: 274
+        x: 256
         y: 0
-        width: 31
-        height: 24
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -283,12 +309,12 @@ TextureImporter:
       name: WET_DEATH_5
       rect:
         serializedVersion: 2
-        x: 331
-        y: 2
-        width: 8
-        height: 7
+        x: 320
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -305,12 +331,12 @@ TextureImporter:
       name: WET_DEATH_6
       rect:
         serializedVersion: 2
-        x: 338
-        y: 8
-        width: 8
-        height: 7
+        x: 384
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -327,12 +353,12 @@ TextureImporter:
       name: WET_DEATH_7
       rect:
         serializedVersion: 2
-        x: 339
+        x: 448
         y: 0
-        width: 32
-        height: 24
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -345,275 +371,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: WET_DEATH_8
-      rect:
-        serializedVersion: 2
-        x: 369
-        y: 7
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 254909d5306cbe710800000000000000
-      internalID: 1723689000156304466
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WET_DEATH_9
-      rect:
-        serializedVersion: 2
-        x: 397
-        y: 4
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 348b33710b3f08960800000000000000
-      internalID: 7602344108630456387
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WET_DEATH_10
-      rect:
-        serializedVersion: 2
-        x: 401
-        y: 0
-        width: 36
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 65387e63eb151d110800000000000000
-      internalID: 1283897246184080214
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WET_DEATH_11
-      rect:
-        serializedVersion: 2
-        x: 434
-        y: 4
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e262f797fadcb450800000000000000
-      internalID: 6105995951748571881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WET_DEATH_12
-      rect:
-        serializedVersion: 2
-        x: 461
-        y: 4
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23ee2f5c2165ba7d0800000000000000
-      internalID: -2906134495907090894
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WET_DEATH_13
-      rect:
-        serializedVersion: 2
-        x: 465
-        y: 0
-        width: 36
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 408441dde645c4990800000000000000
-      internalID: -7400447252544337916
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WET_DEATH_14
-      rect:
-        serializedVersion: 2
-        x: 498
-        y: 4
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 22f7ce6d3c95ab4b0800000000000000
-      internalID: -5423924103555023070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WET_DEATH_15
-      rect:
-        serializedVersion: 2
-        x: 370
-        y: 1
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 979a1cf44a6865710800000000000000
-      internalID: 1681679551140309369
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WET_DEATH_16
-      rect:
-        serializedVersion: 2
-        x: 393
-        y: 0
-        width: 7
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 96e7390bcbd70d550800000000000000
-      internalID: 6183580537749470825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WET_DEATH_17
-      rect:
-        serializedVersion: 2
-        x: 436
-        y: 0
-        width: 7
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 703e4374876e77d90800000000000000
-      internalID: -7099952883261185273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WET_DEATH_18
-      rect:
-        serializedVersion: 2
-        x: 457
-        y: 0
-        width: 7
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 130653b6b5b42c5a0800000000000000
-      internalID: -6502552055956807631
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WET_DEATH_19
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 0
-        width: 7
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 43e5715d13f6721b0800000000000000
-      internalID: -5681450145085432268
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 51a362678c7c2524aa1aee71510b36d9
     internalID: 0
     vertices: []
     indices: 
@@ -621,28 +383,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       WET_DEATH_0: -2436600253647404173
       WET_DEATH_1: 768246847576404278
-      WET_DEATH_10: 1283897246184080214
-      WET_DEATH_11: 6105995951748571881
-      WET_DEATH_12: -2906134495907090894
-      WET_DEATH_13: -7400447252544337916
-      WET_DEATH_14: -5423924103555023070
-      WET_DEATH_15: 1681679551140309369
-      WET_DEATH_16: 6183580537749470825
-      WET_DEATH_17: -7099952883261185273
-      WET_DEATH_18: -6502552055956807631
-      WET_DEATH_19: -5681450145085432268
       WET_DEATH_2: -1675086581913352855
       WET_DEATH_3: -7526574321149713977
       WET_DEATH_4: -6505006971991378976
       WET_DEATH_5: -3201096153782308672
       WET_DEATH_6: 2692859790803126180
       WET_DEATH_7: -6719838772974435085
-      WET_DEATH_8: 1723689000156304466
-      WET_DEATH_9: 7602344108630456387
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
