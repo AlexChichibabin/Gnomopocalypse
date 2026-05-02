@@ -37,6 +37,7 @@
 - In `SpawnRateStep`, `Minute` means step duration in minutes, `UnitsPerMinute` means spawn frequency during that step, and `PauseUntilNextWave` means the pause in seconds after that step before the next wave. No pause is applied after the last step; the last step repeats indefinitely.
 - `UnitsSpawnSettings` provides the spawn center and radius. If `_spawnPoint` is assigned, spawned units use that transform position; otherwise they use the settings object's own position.
 - `ProjectileSelection` manages the current projectile stock as a queue of `ProjectileConfig` assets from `Resources/Configs/Projectiles`. It fills the stock at level start, `ProjectileFactory` takes the bottom/first config when spawning, and `ProjectileSelection` immediately adds a new random config to the top/end.
+- `ProjectileSelectionView` displays that stock by rotating slot transforms in `ProjectileSelectionCanvas`, not just swapping sprites. The bottom slot is the next projectile; after taking it, that slot moves to the top under the viewport mask and receives the new reserve config.
 
 ## Coding Style
 

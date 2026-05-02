@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Soap
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileConfig
   _projectileType: 1
-  _shootPower: 8
-  _maxDragDistance: 2
+  _shootPower: 12
+  _maxDragDistance: 3
   _uiSprite: {fileID: -1799491017094023045, guid: a596427adf65ba943953988c82182d76, type: 3}
   _objSprite: {fileID: -1799491017094023045, guid: a596427adf65ba943953988c82182d76, type: 3}

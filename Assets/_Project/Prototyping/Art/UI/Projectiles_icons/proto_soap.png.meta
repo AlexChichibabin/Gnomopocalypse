@@ -142,9 +142,9 @@ TextureImporter:
       name: proto_soap_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 49
         y: 0
-        width: 1254
+        width: 1205
         height: 1254
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
