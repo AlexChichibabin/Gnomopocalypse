@@ -23,7 +23,7 @@ public class ConfigProvider : IConfigProvider
 		levels = levelList.ToDictionary(x => x.SceneName, x => x);
 		units = unitConfigs.ToDictionary(x => x.UnitType, x => x);
 	}
-
+	public LevelConfig[] GetLevelList() => levelList;
 	public LevelConfig GetLevel(int index) => levelList[index];
 	public LevelConfig GetLevel(string name) => levels[name];
 	public UnitConfig GetUnit(UnitType unitType) => units[unitType];

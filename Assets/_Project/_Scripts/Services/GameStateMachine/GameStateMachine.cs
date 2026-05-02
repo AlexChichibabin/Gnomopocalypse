@@ -1,4 +1,5 @@
 using System;
+using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,7 @@ public enum GameState
 {
 	None,
 	Bootstrap,
+	Menu,
 	LoadLevel
 }
 public class GameStateMachine : IGameStateMachine
@@ -15,10 +17,14 @@ public class GameStateMachine : IGameStateMachine
 
 	private GameState currentState = GameState.None;
 	private IConfigProvider configProvider;
+	private IPlayerProgress progress;
 
-	public GameStateMachine(IConfigProvider configProvider)
+	public GameStateMachine(
+		IConfigProvider configProvider,
+		IPlayerProgress progress)
 	{
 		this.configProvider = configProvider;
+		this.progress = progress;
 	}
 
 	public void ApplyState(GameState state)
@@ -33,6 +39,9 @@ public class GameStateMachine : IGameStateMachine
 				break;
 			case GameState.LoadLevel:
 				ApplyLoadLevel();
+				break;
+			case GameState.Menu:
+				ApplyMenu();
 				break;
 
 			default:
@@ -53,30 +62,42 @@ public class GameStateMachine : IGameStateMachine
 		Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.numerator;
 
 		configProvider.Load();
+		progress.Init();
 
 		var sceneName = SceneManager.GetActiveScene().name;
 		
 
 		StateChanged?.Invoke(currentState);
 
-		if (sceneName == Constants.BootstrapSceneName || sceneName == Constants.GameplaySceneName)
-			ApplyState(GameState.LoadLevel);
+		if (sceneName == Constants.BootstrapSceneName)
+			SceneManager.LoadScene(Constants.MainMenuSceneName);
 
 	}
 	private void ApplyLoadLevel()
 	{
-		if (currentState != GameState.Bootstrap) return;
+		//if (currentState != GameState.Bootstrap) return;
 
 		Debug.Log("GLOBAL: LoadLevel");
 		currentState = GameState.LoadLevel;
 
-		string sceneName = configProvider.GetLevel(0).SceneName;
+		//string sceneName = configProvider.GetLevel(0).SceneName;
+
+		string sceneName = progress.GetNextLevelConfig().SceneName;
 
 		if (SceneManager.GetActiveScene().name != sceneName)
 		{
 			SceneManager.LoadScene(sceneName);
 			Debug.Log("GLOBAL: LoadLevel_SceneLoaded");
 		}
+
+		StateChanged?.Invoke(currentState);
+
+	}
+	private void ApplyMenu()
+	{
+		currentState = GameState.Menu;
+
+		SceneManager.LoadScene(Constants.MainMenuSceneName);
 
 		StateChanged?.Invoke(currentState);
 	}
