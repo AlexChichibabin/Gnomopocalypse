@@ -222,6 +222,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1473846349534414163, guid: 45780a83097c822429a554e5f9f7227a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3491358999357588428, guid: 45780a83097c822429a554e5f9f7227a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1315,7 +1319,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1448880261306844430, guid: be3daef8a0c29c740848ebaaa2a27df5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

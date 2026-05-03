@@ -16,7 +16,7 @@ public class UnitHealth : MonoBehaviour
     private IAudioService _audioService;
 
 
-	public void Init(float startHealth, float mainDamage, float secondaryDamage, bool resetHealth = true, IAudioService audioService)
+	public void Init(float startHealth, float mainDamage, float secondaryDamage, IAudioService audioService, bool resetHealth = true)
 	{
 		_startHealth = startHealth;
         _mainDamage = mainDamage;

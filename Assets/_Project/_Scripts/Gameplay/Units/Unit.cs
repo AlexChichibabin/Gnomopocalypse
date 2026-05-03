@@ -180,8 +180,8 @@ public class Unit : MonoBehaviour
             config.StartHealth, 
             config.MainDamagePercent, 
             config.SecondaryDamagePercent,
-            , resetHealth
-            _audioService);
+            _audioService,
+			resetHealth);
 	}
 
 	private void OnZeroHealth()
