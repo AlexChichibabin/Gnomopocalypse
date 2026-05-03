@@ -431,7 +431,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.9566259
+  m_Radius: 0.5
 --- !u!1 &7675234838323715378
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +513,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 25
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -8635554942911385621, guid: f541a2de44365da43a1239e8f27434ae, type: 3}
+  m_Sprite: {fileID: -6193440507699256877, guid: 4311935118781fd45bc2df0de5bd77fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
