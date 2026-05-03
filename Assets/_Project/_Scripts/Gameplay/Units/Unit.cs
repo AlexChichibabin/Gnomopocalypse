@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
@@ -18,6 +19,8 @@ public class Unit : MonoBehaviour
     private IPauseState _pauseState;
     private Coroutine _lifePhaseRoutine;
     private Coroutine _deathRoutine;
+    private Coroutine _hurtRoutine;
+    private readonly Queue<Action> _pendingDamage = new Queue<Action>();
     private bool _isDead;
 
     public event Action Mutated;
@@ -40,9 +43,20 @@ public class Unit : MonoBehaviour
 
     public void SetPool(UnitsFactory factory) => this.factory = factory;
 
+    public void DealMainDamage()
+    {
+        EnqueueDamage(_unitHealth.DealMainDamage);
+    }
+
+    public void DealSecondaryDamage()
+    {
+        EnqueueDamage(_unitHealth.DealSecondaryDamage);
+    }
+
     private void OnSpawned(UnitConfig config)
     {
         _isDead = false;
+        _pendingDamage.Clear();
         StopDeathRoutine();
         _unitHealth.ZeroHealth -= OnZeroHealth;
         ApplyConfig(config, true);
@@ -128,6 +142,7 @@ public class Unit : MonoBehaviour
 
     private IEnumerator DeathRoutine()
     {
+        StopHurtRoutine();
         _unitMove.Immobilize();
 
         if (_unitAnimator != null)
@@ -158,6 +173,52 @@ public class Unit : MonoBehaviour
         }
     }
 
+    private IEnumerator HurtRoutine()
+    {
+        while (_pendingDamage.Count > 0 && !IsDead())
+        {
+            Action dealDamage = _pendingDamage.Dequeue();
+
+            _unitMove.Immobilize();
+
+            if (_unitAnimator != null)
+                yield return PlayHurtAnimationAndWaitForEnd();
+
+            dealDamage?.Invoke();
+
+            if (IsDead())
+                break;
+
+            if (_unitAnimator != null)
+                _unitAnimator.PlayWalk();
+
+            _unitMove.Run();
+        }
+
+        _hurtRoutine = null;
+    }
+
+    private IEnumerator PlayHurtAnimationAndWaitForEnd()
+    {
+        bool isAnimationEnded = false;
+
+        void OnAnimationEnded() => isAnimationEnded = true;
+
+        try
+        {
+            _unitAnimator.AnimationEnded += OnAnimationEnded;
+            _unitAnimator.PlayHurt();
+
+            // temp
+            float timeoutTime = Time.time + 2f;
+            yield return new WaitUntil(() => isAnimationEnded || Time.time >= timeoutTime);
+        }
+        finally
+        {
+            _unitAnimator.AnimationEnded -= OnAnimationEnded;
+        }
+    }
+
     private void StopDeathRoutine()
     {
         if (_deathRoutine == null)
@@ -165,6 +226,26 @@ public class Unit : MonoBehaviour
 
         StopCoroutine(_deathRoutine);
         _deathRoutine = null;
+    }
+
+    private void StopHurtRoutine()
+    {
+        if (_hurtRoutine == null)
+            return;
+
+        StopCoroutine(_hurtRoutine);
+        _hurtRoutine = null;
+    }
+
+    private void EnqueueDamage(Action dealDamage)
+    {
+        if (IsDead())
+            return;
+
+        _pendingDamage.Enqueue(dealDamage);
+
+        if (_hurtRoutine == null)
+            _hurtRoutine = StartCoroutine(HurtRoutine());
     }
 
     private bool IsDead()
@@ -204,7 +285,9 @@ public class Unit : MonoBehaviour
             return;
 
         _isDead = true;
+        _pendingDamage.Clear();
         StopLifePhase();
+        StopHurtRoutine();
         StopDeathRoutine();
         _deathRoutine = StartCoroutine(DeathRoutine());
     }
@@ -213,6 +296,8 @@ public class Unit : MonoBehaviour
     {
         StopLifePhase();
         StopDeathRoutine();
+        StopHurtRoutine();
+        _pendingDamage.Clear();
         _unitHealth.ZeroHealth -= OnZeroHealth;
         Debug.Log("[Unit] Despawned");
     }

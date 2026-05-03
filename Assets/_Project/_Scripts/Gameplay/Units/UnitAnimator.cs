@@ -13,6 +13,7 @@ public class UnitAnimator : MonoBehaviour
     private static readonly int PufState = Animator.StringToHash("PUF");
     private static readonly int DrinkTrigger = Animator.StringToHash("drink");
     private static readonly int DeathTrigger = Animator.StringToHash("death");
+    private static readonly int HurtTrigger = Animator.StringToHash("hurt");
 
     private Animator _currentAnimator;
     private UnitAnimationEventReceiver _currentEventReceiver;
@@ -84,10 +85,20 @@ public class UnitAnimator : MonoBehaviour
         _currentAnimator.SetTrigger(DeathTrigger);
     }
 
+    public void PlayHurt()
+    {
+        if (_currentAnimator == null)
+            return;
+
+        ResetTriggers();
+        _currentAnimator.SetTrigger(HurtTrigger);
+    }
+
     private void ResetTriggers()
     {
         _currentAnimator.ResetTrigger(DrinkTrigger);
         _currentAnimator.ResetTrigger(DeathTrigger);
+        _currentAnimator.ResetTrigger(HurtTrigger);
     }
 
     private Animator GetAnimator(UnitType unitType)
