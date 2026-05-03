@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     public event Action Despawned;
 
     private ProjectilePool _pool;
+    private bool _isDespawned;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class Projectile : MonoBehaviour
 
     private void OnSpawned(ProjectileConfig projectileConfig)
     {
+        _isDespawned = false;
         _projectileTrigger.Init(projectileConfig);
         _projectileView.Init(projectileConfig);
         //Debug.Log("[Projectile] Spawned");
@@ -26,6 +28,10 @@ public class Projectile : MonoBehaviour
 
     public void Despawn()
     {
+        if (_isDespawned)
+            return;
+
+        _isDespawned = true;
         _pool.Despawn(this);
     }
 

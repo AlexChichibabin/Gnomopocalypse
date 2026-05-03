@@ -1,14 +1,17 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using Zenject;
 
-public class ProjectileFactory : MonoBehaviour, IPointerClickHandler
+public class ProjectileFactory : MonoBehaviour
 {
     [SerializeField] private Transform _spawnPoint;
+    [SerializeField] private float _spawnCooldown = 1f;
 
     private Projectile.ProjectilePool _projectilePool;
     private ProjectileSelection _projectileSelection;
     private ShootingAnchor _shootingAnchor;
+    private Shooting _currentShooting;
+    private Coroutine _spawnCooldownRoutine;
 
     [Inject]
     private void Construct(
@@ -24,6 +27,25 @@ public class ProjectileFactory : MonoBehaviour, IPointerClickHandler
     void Awake()
     {
         if (_spawnPoint == null) _spawnPoint = this.transform;
+    }
+
+    private void Start()
+    {
+        SpawnProjectile();
+    }
+
+    private void OnDisable()
+    {
+        if (_currentShooting != null)
+            _currentShooting.Released -= OnProjectileReleased;
+
+        _currentShooting = null;
+
+        if (_spawnCooldownRoutine != null)
+        {
+            StopCoroutine(_spawnCooldownRoutine);
+            _spawnCooldownRoutine = null;
+        }
     }
 
     private Projectile SpawnProjectile()
@@ -46,14 +68,29 @@ public class ProjectileFactory : MonoBehaviour, IPointerClickHandler
         }
 
         if (projectile.TryGetComponent(out Shooting shooting))
+        {
             shooting.Init(_shootingAnchor.transform, projectileConfig);
+            _currentShooting = shooting;
+            _currentShooting.Released += OnProjectileReleased;
+        }
 
         return projectile;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    private void OnProjectileReleased()
     {
-        SpawnProjectile();
+        if (_currentShooting != null)
+            _currentShooting.Released -= OnProjectileReleased;
+
+        _currentShooting = null;
+        _spawnCooldownRoutine = StartCoroutine(SpawnWithCooldownRoutine());
     }
 
+    private IEnumerator SpawnWithCooldownRoutine()
+    {
+        yield return new WaitForSeconds(_spawnCooldown);
+
+        _spawnCooldownRoutine = null;
+        SpawnProjectile();
+    }
 }
