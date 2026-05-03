@@ -47,7 +47,7 @@ public class Unit : MonoBehaviour
         _unitHealth.ZeroHealth -= OnZeroHealth;
         ApplyConfig(config, true);
         _unitHealth.ZeroHealth += OnZeroHealth;
-        _pauseState.IsPaused += OnPauseChanged;
+        _pauseState.IsPausedEvent += OnPauseChanged;
 
         StartLifePhase();
     }

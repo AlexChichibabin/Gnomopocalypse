@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
     [SerializeField] private float _maxDragDistance = 2f;
 
     private IAudioService audioService;
+    private IPauseState pauseState;
 
     private Transform _anchor;
     private Rigidbody2D _rigidbody;
@@ -23,11 +24,14 @@ public class Shooting : MonoBehaviour
     public event Action Released;
 
     [Inject]
-    public void Construct(IInputService input,
-		IAudioService audioService)
+    public void Construct(
+        IInputService input,
+		IAudioService audioService,
+		IPauseState pauseState)
     {
         _input = input;
         this.audioService = audioService;
+        this.pauseState = pauseState;
         SubscribeInput();
     }
 
@@ -70,7 +74,7 @@ public class Shooting : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (IsMoving)
+        if (IsMoving || pauseState.IsPaused == true)
             return;
 
         _dragging = true;

@@ -1,20 +1,26 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MusicSettings : MonoBehaviour
 {
 	[SerializeField] private AudioMixer mixer;
+	[SerializeField] private GameObject pausePanel;
 
 	[SerializeField] private Slider sfxSlider;
 	[SerializeField] private Slider musicSlider;
 	[SerializeField] private Slider masterSlider;
 
-	private void Awake()
+	private void Start()
 	{
-		sfxSlider.value = 1;
-		musicSlider.value = 1;
-		masterSlider.value = 1;
+		sfxSlider.value = 0.5f;
+		musicSlider.value = 0.5f;
+		masterSlider.value = 0.5f;
+		OnSfxSliderChanged(sfxSlider.value);
+		OnMusicSliderChanged(musicSlider.value);
+		OnMasterSliderChanged(masterSlider.value);
+		if (SceneManager.GetActiveScene().name != Constants.MainMenuSceneName) pausePanel.SetActive(false);
 
 		sfxSlider.onValueChanged.AddListener(OnSfxSliderChanged);
 		musicSlider.onValueChanged.AddListener(OnMusicSliderChanged);

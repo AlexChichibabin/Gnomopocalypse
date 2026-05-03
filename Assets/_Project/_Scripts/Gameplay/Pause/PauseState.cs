@@ -4,7 +4,8 @@ using Zenject;
 
 public class PauseState : IPauseState
 {
-	public event Action<bool> IsPaused;
+	public event Action<bool> IsPausedEvent;
+	public bool IsPaused => isPaused;
 
 	private bool isPaused;
 	ILevelStateMachine levelStateMachine;
@@ -31,12 +32,12 @@ public class PauseState : IPauseState
 	{
 		isPaused = true;
 		inputService.DisableGameplay();
-		IsPaused?.Invoke(isPaused);
+		IsPausedEvent?.Invoke(isPaused);
 	}
 	public void UnPause()
 	{
 		isPaused = false;
 		inputService.EnableGameplay();
-		IsPaused?.Invoke(isPaused);
+		IsPausedEvent?.Invoke(isPaused);
 	}
 }
