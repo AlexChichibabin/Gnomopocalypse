@@ -13,6 +13,7 @@ public class UnitsFactory : IInitializable, ILateDisposable
     private bool _canSpawn;
     private ILevelStateMachine _levelStateMachine;
     private IUnitTracker _unitTracker;
+    private IPauseState _pauseState;
 
     public event Action OnAllWavesFinished;
 
@@ -21,7 +22,8 @@ public class UnitsFactory : IInitializable, ILateDisposable
             ICoroutineRunner coroutineRunner,
             ILevelStateMachine levelStateMachine,
             UnitsSpawnSettings spawnSettings,
-			IUnitTracker unitTracker)
+			IUnitTracker unitTracker,
+			IPauseState pauseState)
     {
         _unitPool = unitPool;
         _configProvider = configProvider;
@@ -29,15 +31,22 @@ public class UnitsFactory : IInitializable, ILateDisposable
         _levelStateMachine = levelStateMachine;
         _spawnSettings = spawnSettings;
         _unitTracker = unitTracker;
-    }
+		_pauseState = pauseState;
+	}
 
     public void Initialize()
     {
         _canSpawn = true;
         _levelStateMachine.StateChanged += OnStateChanged;
+        _pauseState.IsPausedEvent += OnPausedChanged;
     }
 
-    private void OnStateChanged(LevelState state)
+	private void OnPausedChanged(bool isPaused)
+	{
+		_coroutineRunner.SetActive(!isPaused);
+	}
+
+	private void OnStateChanged(LevelState state)
     {
         if (state != LevelState.Gameplay)
             return;

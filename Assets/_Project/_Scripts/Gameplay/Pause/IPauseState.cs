@@ -2,8 +2,8 @@
 
 public interface IPauseState
 {
-	event Action<bool> IsPaused;
-
+	event Action<bool> IsPausedEvent;
+	bool IsPaused { get; }
 	void Construct(ILevelStateMachine levelStateMachine, IInputService inputService);
 	void SwitchPause();
 	void Pause();
