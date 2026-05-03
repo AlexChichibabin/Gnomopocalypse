@@ -32,14 +32,14 @@ public class UnitHealth : MonoBehaviour
     public void DealMainDamage()
     {
         CurrentHealth -= GetDamageFromPercent(_mainDamage);
-        Debug.Log("[UnitHealth] DealMainDamage");
+        //Debug.Log("[UnitHealth] DealMainDamage");
         CheckHealth();
     }
 
     public void DealSecondaryDamage()
     {
         CurrentHealth -= GetDamageFromPercent(_secondaryDamage);
-        Debug.Log("[UnitHealth] DealSecondaryDamage");
+        //Debug.Log("[UnitHealth] DealSecondaryDamage");
         CheckHealth();
     }
     public void ResetHealth()

@@ -15,7 +15,7 @@ public class GameBootstrapper : IInitializable
 
     public void Initialize()
     {
-        Debug.Log("GLOBAL: Boot");
+        //Debug.Log("GLOBAL: Boot");
         InitGameStateMachine();
     }
 

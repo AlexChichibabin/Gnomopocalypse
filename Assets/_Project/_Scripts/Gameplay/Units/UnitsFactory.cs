@@ -85,7 +85,7 @@ public class UnitsFactory : IInitializable, ILateDisposable
             SpawnRateStep step = spawnRateSteps[i];
             bool isLastStep = i == spawnRateSteps.Length - 1;
 
-            Debug.Log($"[UnitsFactory] Step {i + 1}: {step.UnitsPerMinute} units/minute");
+            //Debug.Log($"[UnitsFactory] Step {i + 1}: {step.UnitsPerMinute} units/minute");
 
 			while (isPaused) yield return null;
 			yield return SpawnByStep(step);

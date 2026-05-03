@@ -75,7 +75,7 @@ public class LevelStateMachine : ILevelStateMachine
 	}
 	private void ApplyBootstrap()
 	{
-		Debug.Log("LEVEL: Init");
+		//Debug.Log("LEVEL: Init");
 		currentState = LevelState.Bootstrap;
 
 		string sceneName = SceneManager.GetActiveScene().name;
@@ -97,7 +97,7 @@ public class LevelStateMachine : ILevelStateMachine
 	{
 		if (currentState != LevelState.Bootstrap) return;
 
-		Debug.Log("LEVEL: Gameplay");
+		//Debug.Log("LEVEL: Gameplay");
 		currentState = LevelState.Gameplay;
 
 		inputService.EnableGameplay();

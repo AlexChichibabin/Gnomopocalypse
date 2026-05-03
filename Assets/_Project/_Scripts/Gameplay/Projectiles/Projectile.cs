@@ -37,7 +37,7 @@ public class Projectile : MonoBehaviour
 
     private void OnDespawned()
     {
-        Debug.Log("[Projectile] Despawned");
+        //Debug.Log("[Projectile] Despawned");
         Despawned?.Invoke();
     }
 
