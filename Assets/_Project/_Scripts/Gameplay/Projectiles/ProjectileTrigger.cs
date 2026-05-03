@@ -27,9 +27,9 @@ public class ProjectileTrigger : MonoBehaviour
         if (collision.TryGetComponent<Unit>(out var unit)  && _shooting.IsMoving)
         {
             if (CompatibilityExtention.IsMainDamage(unit.UnitType, _projectileType))
-                unit.Damageble.DealMainDamage();
+                unit.DealMainDamage();
             else
-                unit.Damageble.DealSecondaryDamage();
+                unit.DealSecondaryDamage();
         }
     }
 }

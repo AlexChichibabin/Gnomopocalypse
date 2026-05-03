@@ -34,7 +34,6 @@ public class UnitHealth : MonoBehaviour
         CurrentHealth -= GetDamageFromPercent(_mainDamage);
         Debug.Log("[UnitHealth] DealMainDamage");
         CheckHealth();
-
     }
 
     public void DealSecondaryDamage()
