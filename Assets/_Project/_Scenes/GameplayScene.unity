@@ -5443,6 +5443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicSettings
   mixer: {fileID: 24100000, guid: 1247bbc23ecd9e843a1ad960f7858537, type: 2}
+  pausePanel: {fileID: 497079345}
   sfxSlider: {fileID: 7397011540521693117}
   musicSlider: {fileID: 3969217909389527851}
   masterSlider: {fileID: 5315656998399573850}
