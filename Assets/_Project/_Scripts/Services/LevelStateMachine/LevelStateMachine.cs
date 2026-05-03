@@ -79,7 +79,7 @@ public class LevelStateMachine : ILevelStateMachine
 		LevelConfig levelConfig = configProvider.GetLevel(sceneName);
 		playerHealth.RestoreHealth();
 		unitTracker.Init();
-		audioService.PlayMusic(MusicId.Gameplay);
+		audioService.PlayMusic(MusicId.Gameplay1);
 		pauseState.UnPause();
 
 		StateChanged?.Invoke(currentState);
@@ -102,7 +102,8 @@ public class LevelStateMachine : ILevelStateMachine
 		if (currentState != LevelState.Gameplay) return;
 
 		currentState = LevelState.Win;
-		audioService.PlayMusic(MusicId.Win);
+		audioService.PlaySound(SoundId.Win);
+		audioService.StopMusic();
 		pauseState.Pause();
 
 		StateChanged?.Invoke(currentState);
@@ -112,7 +113,8 @@ public class LevelStateMachine : ILevelStateMachine
 		if (currentState != LevelState.Gameplay) return;
 
 		currentState = LevelState.Lose;
-		audioService.PlayMusic(MusicId.Lose);
+		audioService.PlaySound(SoundId.Lose);
+		audioService.StopMusic();
 		pauseState.Pause();
 
 		StateChanged?.Invoke(currentState);

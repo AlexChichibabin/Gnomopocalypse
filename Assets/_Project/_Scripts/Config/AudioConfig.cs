@@ -16,7 +16,8 @@ public enum SoundId
 public enum MusicId
 {
 	Menu,
-	Gameplay,
+	Gameplay1,
+	Gameplay2,
 	Win,
 	Lose
 }
