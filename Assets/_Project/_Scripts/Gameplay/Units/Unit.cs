@@ -6,6 +6,8 @@ using Zenject;
 
 public class Unit : MonoBehaviour
 {
+    private const int SortingConflictOffset = 1;
+    private const int MaxUnitSortingContacts = 8;
 
     [SerializeField] private UnitMove _unitMove;
     [SerializeField] private UnitHealth _unitHealth;
@@ -21,6 +23,11 @@ public class Unit : MonoBehaviour
     private Coroutine _deathRoutine;
     private Coroutine _hurtRoutine;
     private readonly Queue<Action> _pendingDamage = new Queue<Action>();
+    private readonly Collider2D[] _sortingContactResults = new Collider2D[MaxUnitSortingContacts];
+    private Collider2D _collider;
+    private int _baseSortingOrder;
+    private int _currentSortingOrder;
+    private bool _hasSortingConflictOffset;
     private bool _isDead;
 
     public event Action Mutated;
@@ -40,6 +47,16 @@ public class Unit : MonoBehaviour
         _pauseState = pauseState;
 	}
        
+    private void Awake()
+    {
+        _collider = GetComponent<Collider2D>();
+    }
+
+    private void LateUpdate()
+    {
+        ResolveSortingContacts();
+    }
+
 
     public void SetPool(UnitsFactory factory) => this.factory = factory;
 
@@ -51,6 +68,14 @@ public class Unit : MonoBehaviour
     public void DealSecondaryDamage()
     {
         EnqueueDamage(_unitHealth.DealSecondaryDamage);
+    }
+
+    public void SetSortingOrder(int sortingOrder)
+    {
+        _baseSortingOrder = sortingOrder;
+        _currentSortingOrder = sortingOrder;
+        _hasSortingConflictOffset = false;
+        _unitView.SetSortingOrder(_currentSortingOrder);
     }
 
     private void OnSpawned(UnitConfig config)
@@ -248,6 +273,51 @@ public class Unit : MonoBehaviour
             _hurtRoutine = StartCoroutine(HurtRoutine());
     }
 
+    private void ResolveSortingContacts()
+    {
+        if (_collider == null || !_collider.enabled)
+            return;
+
+        bool shouldUseSortingConflictOffset = false;
+        ContactFilter2D contactFilter = new ContactFilter2D();
+        contactFilter.NoFilter();
+        int contactsCount = Physics2D.OverlapCollider(_collider, contactFilter, _sortingContactResults);
+
+        for (int i = 0; i < contactsCount; i++)
+        {
+            Collider2D contact = _sortingContactResults[i];
+
+            if (contact == null)
+                continue;
+
+            Unit otherUnit = contact.GetComponentInParent<Unit>();
+
+            if (otherUnit == null || otherUnit == this)
+                continue;
+
+            if (otherUnit._baseSortingOrder != _baseSortingOrder)
+                continue;
+
+            if (GetInstanceID() > otherUnit.GetInstanceID())
+            {
+                shouldUseSortingConflictOffset = true;
+                break;
+            }
+        }
+
+        SetSortingConflictOffset(shouldUseSortingConflictOffset);
+    }
+
+    private void SetSortingConflictOffset(bool shouldUseSortingConflictOffset)
+    {
+        if (_hasSortingConflictOffset == shouldUseSortingConflictOffset)
+            return;
+
+        _hasSortingConflictOffset = shouldUseSortingConflictOffset;
+        _currentSortingOrder = _baseSortingOrder + (_hasSortingConflictOffset ? SortingConflictOffset : 0);
+        _unitView.SetSortingOrder(_currentSortingOrder);
+    }
+
     private bool IsDead()
     {
         return _isDead || _unitHealth.CurrentHealth <= 0;
@@ -298,6 +368,7 @@ public class Unit : MonoBehaviour
         StopDeathRoutine();
         StopHurtRoutine();
         _pendingDamage.Clear();
+        SetSortingConflictOffset(false);
         _unitHealth.ZeroHealth -= OnZeroHealth;
         Debug.Log("[Unit] Despawned");
     }
