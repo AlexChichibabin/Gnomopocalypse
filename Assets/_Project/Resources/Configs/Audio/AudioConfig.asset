@@ -15,7 +15,7 @@ MonoBehaviour:
   Sounds:
   - Id: 0
     Clip: {fileID: 8300000, guid: d7d55492da768974da1477859d6e8984, type: 3}
-    Volume: 1
+    Volume: 0.58
   - Id: 1
     Clip: {fileID: 8300000, guid: a5f7e644b27754149ad88dd9632c3f04, type: 3}
     Volume: 1
@@ -23,8 +23,8 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 12b9bb0a897181c428fd60502dc5bc46, type: 3}
     Volume: 1
   - Id: 3
-    Clip: {fileID: 0}
-    Volume: 1
+    Clip: {fileID: 8300000, guid: 2cfeb7c593314ab4da5de8639e9bda3a, type: 3}
+    Volume: 0.091
   - Id: 4
     Clip: {fileID: 8300000, guid: b77de0e80a64e194da62dd70ff620599, type: 3}
     Volume: 0.131
@@ -39,7 +39,7 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 1f1c6507d14c76a499007aca29fbbd19, type: 3}
     Volume: 1
   - Id: 1
-    Clip: {fileID: 0}
+    Clip: {fileID: 8300000, guid: 21fe23e7d5ba628499c9af624d672003, type: 3}
     Volume: 1
   - Id: 2
     Clip: {fileID: 0}

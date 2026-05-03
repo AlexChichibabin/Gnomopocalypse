@@ -12,11 +12,15 @@ public class UnitHealth : MonoBehaviour
     public event Action ZeroHealth;
     public event Action<float, float> HealthChanged;
 
-    public void Init(float startHealth, float mainDamage, float secondaryDamage)
+    private IAudioService _audioService;
+
+
+	public void Init(float startHealth, float mainDamage, float secondaryDamage, IAudioService audioService)
     {
         _startHealth = startHealth;
         _mainDamage = mainDamage;
         _secondaryDamage = secondaryDamage;
+        _audioService = audioService;
 
         ResetHealth();
     }
@@ -42,8 +46,13 @@ public class UnitHealth : MonoBehaviour
         HealthChanged?.Invoke(CurrentHealth, _startHealth);
     }
 
-    private float GetDamageFromPercent(float percent) =>
-        _startHealth * percent / 50f;
+    private float GetDamageFromPercent(float percent)
+    {
+        _audioService.PlaySound(SoundId.HitEnemy);
+
+		return _startHealth* percent / 50f;
+	}
+        
 
     private void CheckHealth()
     {
@@ -53,8 +62,6 @@ public class UnitHealth : MonoBehaviour
             ZeroHealth?.Invoke();
         }
         HealthChanged?.Invoke(CurrentHealth, _startHealth);
-
-
     }
 
 }
