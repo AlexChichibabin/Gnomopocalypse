@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6440030918383970869}
   - component: {fileID: 2221236832518814499}
   - component: {fileID: 5267429497537212076}
+  - component: {fileID: 4503876956751561819}
   m_Layer: 0
   m_Name: Leaking
   m_TagString: Untagged
@@ -114,6 +115,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4503876956751561819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549210123371712102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6736f5dde8f5408c9a824b9523a6741d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAnimationEventReceiver
 --- !u!1 &3824544498927451774
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,13 +138,14 @@ GameObject:
   - component: {fileID: 7435318885724518965}
   - component: {fileID: 5112088062160487151}
   - component: {fileID: 8564314854354014023}
+  - component: {fileID: 6886428571243798089}
   m_Layer: 0
   m_Name: Sticky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7435318885724518965
 Transform:
   m_ObjectHideFlags: 0
@@ -196,7 +210,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 12
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -4660475226232364364, guid: d5c242b68afce364bb9ff35a9f382c62, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -204,7 +218,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!95 &8564314854354014023
 Animator:
@@ -228,6 +242,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6886428571243798089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3824544498927451774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6736f5dde8f5408c9a824b9523a6741d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAnimationEventReceiver
 --- !u!1 &3915117309018246263
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,13 +520,14 @@ GameObject:
   - component: {fileID: 8180245470432700379}
   - component: {fileID: 1788374819041094626}
   - component: {fileID: 8645474840429074900}
+  - component: {fileID: 5961223653722382361}
   m_Layer: 0
   m_Name: Smelly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8180245470432700379
 Transform:
   m_ObjectHideFlags: 0
@@ -597,6 +624,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5961223653722382361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6659844043768254564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6736f5dde8f5408c9a824b9523a6741d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAnimationEventReceiver
 --- !u!1 &7636159963577912736
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,6 +647,7 @@ GameObject:
   - component: {fileID: 8869578380931141520}
   - component: {fileID: 9152135109511842345}
   - component: {fileID: 4871920880429469303}
+  - component: {fileID: 3118392737332377408}
   m_Layer: 0
   m_Name: Dirty
   m_TagString: Untagged
@@ -711,6 +751,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3118392737332377408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7636159963577912736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6736f5dde8f5408c9a824b9523a6741d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAnimationEventReceiver
 --- !u!1 &8325738064408767118
 GameObject:
   m_ObjectHideFlags: 0

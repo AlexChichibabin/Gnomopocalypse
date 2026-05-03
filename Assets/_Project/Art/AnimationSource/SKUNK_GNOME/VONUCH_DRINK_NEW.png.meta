@@ -1,58 +1,103 @@
 fileFormatVersion: 2
-guid: abd451e51585f2a45891dca79e823d06
+guid: 83b5bbd540c73484cb671291076b2b4f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8698140362886380277
-    second: VANUCH_DRINK_0
+      213: 2846990733775058884
+    second: VONUCH_DRINK_NEW_0
   - first:
-      213: -1298399743544441156
-    second: VANUCH_DRINK_1
+      213: -2668399920357403673
+    second: VONUCH_DRINK_NEW_1
   - first:
-      213: 5445073013418612871
-    second: VANUCH_DRINK_2
+      213: 7784496883871345857
+    second: VONUCH_DRINK_NEW_2
   - first:
-      213: -5528479420620182785
-    second: VANUCH_DRINK_3
+      213: -7996719850604850034
+    second: VONUCH_DRINK_NEW_3
   - first:
-      213: -4467307129853980870
-    second: VANUCH_DRINK_4
+      213: 822100916818028256
+    second: VONUCH_DRINK_NEW_4
   - first:
-      213: -6697210134193347088
-    second: VANUCH_DRINK_5
+      213: -6608897695819816273
+    second: VONUCH_DRINK_NEW_5
   - first:
-      213: 1342528352793282617
-    second: VANUCH_DRINK_6
+      213: 4129355097503460595
+    second: VONUCH_DRINK_NEW_6
   - first:
-      213: -7103490445528272083
-    second: VANUCH_DRINK_7
+      213: -3911820672735085009
+    second: VONUCH_DRINK_NEW_7
   - first:
-      213: -4057830386754007213
-    second: VANUCH_DRINK_8
+      213: 8753225583459600054
+    second: VONUCH_DRINK_NEW_8
   - first:
-      213: 5739709944784134691
-    second: VANUCH_DRINK_9
+      213: -3854342641163584296
+    second: VONUCH_DRINK_NEW_9
   - first:
-      213: 650721569505738463
-    second: VANUCH_DRINK_10
+      213: 255353605045369501
+    second: VONUCH_DRINK_NEW_10
   - first:
-      213: -6019832066126876863
-    second: VANUCH_DRINK_11
+      213: 7067830406373821136
+    second: VONUCH_DRINK_NEW_11
   - first:
-      213: 6282952500560381110
-    second: VANUCH_DRINK_12
+      213: -7217065733299706235
+    second: VONUCH_DRINK_NEW_12
   - first:
-      213: 4444238762429528485
-    second: VANUCH_DRINK_13
+      213: -2105600894968471081
+    second: VONUCH_DRINK_NEW_13
   - first:
-      213: -5007013614229999262
-    second: VANUCH_DRINK_14
+      213: 6899165628750698186
+    second: VONUCH_DRINK_NEW_14
   - first:
-      213: 3847675060086295523
-    second: VANUCH_DRINK_15
+      213: -2235269841620651976
+    second: VONUCH_DRINK_NEW_15
   - first:
-      213: -2100872225297650558
-    second: VANUCH_DRINK_16
+      213: 9210004853781182372
+    second: VONUCH_DRINK_NEW_16
+  - first:
+      213: -407161034073036906
+    second: VONUCH_DRINK_NEW_17
+  - first:
+      213: 4734710338994033218
+    second: VONUCH_DRINK_NEW_18
+  - first:
+      213: -5438306311672496770
+    second: VONUCH_DRINK_NEW_19
+  - first:
+      213: 8466990919489873663
+    second: VONUCH_DRINK_NEW_20
+  - first:
+      213: -1311773781241435518
+    second: VONUCH_DRINK_NEW_21
+  - first:
+      213: -1997176506087381930
+    second: VONUCH_DRINK_NEW_22
+  - first:
+      213: 2763687598304604512
+    second: VONUCH_DRINK_NEW_23
+  - first:
+      213: 8362579467820492141
+    second: VONUCH_DRINK_NEW_24
+  - first:
+      213: -3775798108032881755
+    second: VONUCH_DRINK_NEW_25
+  - first:
+      213: -3789990298595249195
+    second: VONUCH_DRINK_NEW_26
+  - first:
+      213: 1682871496186589074
+    second: VONUCH_DRINK_NEW_27
+  - first:
+      213: 7076572028992345555
+    second: VONUCH_DRINK_NEW_28
+  - first:
+      213: 7993707591074347108
+    second: VONUCH_DRINK_NEW_29
+  - first:
+      213: -3604944417068206292
+    second: VONUCH_DRINK_NEW_30
+  - first:
+      213: -4896490713456404462
+    second: VONUCH_DRINK_NEW_31
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -145,6 +190,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -158,24 +216,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -187,7 +232,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: VANUCH_DRINK_0
+      name: VONUCH_DRINK_NEW_0
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +247,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b058ba7bc6ff94780800000000000000
-      internalID: -8698140362886380277
+      spriteID: 4c7bd750dfa828720800000000000000
+      internalID: 2846990733775058884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_1
+      name: VONUCH_DRINK_NEW_1
       rect:
         serializedVersion: 2
         x: 64
@@ -224,14 +269,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cb6439dff482bfde0800000000000000
-      internalID: -1298399743544441156
+      spriteID: 7e39a640960f7fad0800000000000000
+      internalID: -2668399920357403673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_2
+      name: VONUCH_DRINK_NEW_2
       rect:
         serializedVersion: 2
         x: 128
@@ -246,14 +291,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 788d1e47e09c09b40800000000000000
-      internalID: 5445073013418612871
+      spriteID: 1cc694efba6180c60800000000000000
+      internalID: 7784496883871345857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_3
+      name: VONUCH_DRINK_NEW_3
       rect:
         serializedVersion: 2
         x: 192
@@ -268,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ffa60e11245e643b0800000000000000
-      internalID: -5528479420620182785
+      spriteID: e8412601aa1f50190800000000000000
+      internalID: -7996719850604850034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_4
+      name: VONUCH_DRINK_NEW_4
       rect:
         serializedVersion: 2
         x: 256
@@ -290,14 +335,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a3fcb7e85dfe002c0800000000000000
-      internalID: -4467307129853980870
+      spriteID: 0e6267c9d60b86b00800000000000000
+      internalID: 822100916818028256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_5
+      name: VONUCH_DRINK_NEW_5
       rect:
         serializedVersion: 2
         x: 320
@@ -312,14 +357,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0f56245cddabe03a0800000000000000
-      internalID: -6697210134193347088
+      spriteID: fa223c3af8a7844a0800000000000000
+      internalID: -6608897695819816273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_6
+      name: VONUCH_DRINK_NEW_6
       rect:
         serializedVersion: 2
         x: 384
@@ -334,14 +379,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93842218c6e91a210800000000000000
-      internalID: 1342528352793282617
+      spriteID: 3fc642a359a6e4930800000000000000
+      internalID: 4129355097503460595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_7
+      name: VONUCH_DRINK_NEW_7
       rect:
         serializedVersion: 2
         x: 448
@@ -356,14 +401,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d23f7e063155b6d90800000000000000
-      internalID: -7103490445528272083
+      spriteID: f2e7898e2db66b9c0800000000000000
+      internalID: -3911820672735085009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_8
+      name: VONUCH_DRINK_NEW_8
       rect:
         serializedVersion: 2
         x: 512
@@ -378,14 +423,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 35fcdb633c0bfa7c0800000000000000
-      internalID: -4057830386754007213
+      spriteID: 6b688f4aa44b97970800000000000000
+      internalID: 8753225583459600054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_9
+      name: VONUCH_DRINK_NEW_9
       rect:
         serializedVersion: 2
         x: 576
@@ -400,14 +445,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 322a2a4d8cb87af40800000000000000
-      internalID: 5739709944784134691
+      spriteID: 8dcbdcef9cf928ac0800000000000000
+      internalID: -3854342641163584296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_10
+      name: VONUCH_DRINK_NEW_10
       rect:
         serializedVersion: 2
         x: 640
@@ -422,14 +467,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fdef21ed1d3d70900800000000000000
-      internalID: 650721569505738463
+      spriteID: d9a38d830c23b8300800000000000000
+      internalID: 255353605045369501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_11
+      name: VONUCH_DRINK_NEW_11
       rect:
         serializedVersion: 2
         x: 704
@@ -444,14 +489,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 14f600b51a2457ca0800000000000000
-      internalID: -6019832066126876863
+      spriteID: 0dacd90ce4af51260800000000000000
+      internalID: 7067830406373821136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_12
+      name: VONUCH_DRINK_NEW_12
       rect:
         serializedVersion: 2
         x: 768
@@ -466,14 +511,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b4cd80c208813750800000000000000
-      internalID: 6282952500560381110
+      spriteID: 586e60604f4d7db90800000000000000
+      internalID: -7217065733299706235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_13
+      name: VONUCH_DRINK_NEW_13
       rect:
         serializedVersion: 2
         x: 832
@@ -488,14 +533,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5a932ab9b9b1dad30800000000000000
-      internalID: 4444238762429528485
+      spriteID: 7d1e8a8542767c2e0800000000000000
+      internalID: -2105600894968471081
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_14
+      name: VONUCH_DRINK_NEW_14
       rect:
         serializedVersion: 2
         x: 896
@@ -510,14 +555,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 261b64a65a3838ab0800000000000000
-      internalID: -5007013614229999262
+      spriteID: ac615440692cebf50800000000000000
+      internalID: 6899165628750698186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_15
+      name: VONUCH_DRINK_NEW_15
       rect:
         serializedVersion: 2
         x: 960
@@ -532,14 +577,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3ebc29fc410b56530800000000000000
-      internalID: 3847675060086295523
+      spriteID: 830be090ce9baf0e0800000000000000
+      internalID: -2235269841620651976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VANUCH_DRINK_16
+      name: VONUCH_DRINK_NEW_16
       rect:
         serializedVersion: 2
         x: 1024
@@ -554,8 +599,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28c26ac87d338d2e0800000000000000
-      internalID: -2100872225297650558
+      spriteID: 4a730492e9280df70800000000000000
+      internalID: 9210004853781182372
       vertices: []
       indices: 
       edges: []
@@ -564,7 +609,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 234950435e741ce419d559daee50f181
+    spriteID: 661062f5b2dbdf54a9fdb49db6c3abc6
     internalID: 0
     vertices: []
     indices: 
@@ -576,23 +621,23 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":17.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      VANUCH_DRINK_0: -8698140362886380277
-      VANUCH_DRINK_1: -1298399743544441156
-      VANUCH_DRINK_10: 650721569505738463
-      VANUCH_DRINK_11: -6019832066126876863
-      VANUCH_DRINK_12: 6282952500560381110
-      VANUCH_DRINK_13: 4444238762429528485
-      VANUCH_DRINK_14: -5007013614229999262
-      VANUCH_DRINK_15: 3847675060086295523
-      VANUCH_DRINK_16: -2100872225297650558
-      VANUCH_DRINK_2: 5445073013418612871
-      VANUCH_DRINK_3: -5528479420620182785
-      VANUCH_DRINK_4: -4467307129853980870
-      VANUCH_DRINK_5: -6697210134193347088
-      VANUCH_DRINK_6: 1342528352793282617
-      VANUCH_DRINK_7: -7103490445528272083
-      VANUCH_DRINK_8: -4057830386754007213
-      VANUCH_DRINK_9: 5739709944784134691
+      VONUCH_DRINK_NEW_0: 2846990733775058884
+      VONUCH_DRINK_NEW_1: -2668399920357403673
+      VONUCH_DRINK_NEW_10: 255353605045369501
+      VONUCH_DRINK_NEW_11: 7067830406373821136
+      VONUCH_DRINK_NEW_12: -7217065733299706235
+      VONUCH_DRINK_NEW_13: -2105600894968471081
+      VONUCH_DRINK_NEW_14: 6899165628750698186
+      VONUCH_DRINK_NEW_15: -2235269841620651976
+      VONUCH_DRINK_NEW_16: 9210004853781182372
+      VONUCH_DRINK_NEW_2: 7784496883871345857
+      VONUCH_DRINK_NEW_3: -7996719850604850034
+      VONUCH_DRINK_NEW_4: 822100916818028256
+      VONUCH_DRINK_NEW_5: -6608897695819816273
+      VONUCH_DRINK_NEW_6: 4129355097503460595
+      VONUCH_DRINK_NEW_7: -3911820672735085009
+      VONUCH_DRINK_NEW_8: 8753225583459600054
+      VONUCH_DRINK_NEW_9: -3854342641163584296
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
