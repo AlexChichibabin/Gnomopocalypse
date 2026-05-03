@@ -8,16 +8,13 @@ public class PauseState : IPauseState
 	public bool IsPaused => isPaused;
 
 	private bool isPaused;
-	ILevelStateMachine levelStateMachine;
 	IInputService inputService;
 
 
 	[Inject]
 	public void Construct(
-		ILevelStateMachine levelStateMachine,
 		IInputService inputService)
 	{
-		this.levelStateMachine = levelStateMachine;
 		this.inputService = inputService;
 	}
 

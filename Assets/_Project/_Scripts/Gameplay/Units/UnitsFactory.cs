@@ -14,6 +14,7 @@ public class UnitsFactory : IInitializable, ILateDisposable
     private ILevelStateMachine _levelStateMachine;
     private IUnitTracker _unitTracker;
     private IPauseState _pauseState;
+    private bool isPaused = false;
 
     public event Action OnAllWavesFinished;
 
@@ -43,7 +44,7 @@ public class UnitsFactory : IInitializable, ILateDisposable
 
 	private void OnPausedChanged(bool isPaused)
 	{
-		_coroutineRunner.SetActive(!isPaused);
+		this.isPaused = isPaused;
 	}
 
 	private void OnStateChanged(LevelState state)
@@ -82,7 +83,8 @@ public class UnitsFactory : IInitializable, ILateDisposable
 
             Debug.Log($"[UnitsFactory] Step {i + 1}: {step.UnitsPerMinute} units/minute");
 
-            yield return SpawnByStep(step);
+			while (isPaused) yield return null;
+			yield return SpawnByStep(step);
 
             if (_canSpawn && !isLastStep)
                 yield return WaitForNextWavePause(step);
@@ -96,7 +98,8 @@ public class UnitsFactory : IInitializable, ILateDisposable
 
     private IEnumerator WaitForNextWavePause(SpawnRateStep step)
     {
-        if (step.PauseUntilNextWave <= 0)
+		while (isPaused) yield return null;
+		if (step.PauseUntilNextWave <= 0)
             yield break;
 
         Debug.Log($"[UnitsFactory] Pause before next wave: {step.PauseUntilNextWave} seconds");
@@ -107,6 +110,7 @@ public class UnitsFactory : IInitializable, ILateDisposable
     {
         if (step.UnitsPerMinute <= 0)
         {
+            while (isPaused) yield return null;
             yield return new WaitForSeconds(step.Minute * 60f);
             yield break;
         }
@@ -117,13 +121,16 @@ public class UnitsFactory : IInitializable, ILateDisposable
 
         for (int i = 0; _canSpawn && i < spawnCount; i++)
         {
-            yield return new WaitForSeconds(spawnDelay);
+			while (isPaused) yield return null;
+			yield return new WaitForSeconds(spawnDelay);
             elapsedTime += spawnDelay;
-            SpawnUnit();
+			while (isPaused) yield return null;
+			SpawnUnit();
         }
 
         float stepDuration = step.Minute * 60f;
 
+		while (isPaused) yield return null;
         if (_canSpawn && elapsedTime < stepDuration)
             yield return new WaitForSeconds(stepDuration - elapsedTime);
     }
