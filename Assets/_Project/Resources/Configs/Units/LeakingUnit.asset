@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LeakingUnit
   m_EditorClassIdentifier: Assembly-CSharp::UnitConfig
   _unitType: 2
-  _startHealth: 12
-  _startMoveSpeed: 0.2
+  _startHealth: 15
+  _startMoveSpeed: 0.5
   _mainDamagePercent: 25
   _secondaryDamagePercent: 10
   _spawnProbability: 30

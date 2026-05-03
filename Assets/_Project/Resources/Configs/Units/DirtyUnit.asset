@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: DirtyUnit
   m_EditorClassIdentifier: Assembly-CSharp::UnitConfig
   _unitType: 1
-  _startHealth: 15
-  _startMoveSpeed: 0.2
+  _startHealth: 12
+  _startMoveSpeed: 0.4
   _mainDamagePercent: 25
   _secondaryDamagePercent: 10
   _spawnProbability: 30
   _transformationProbability: 20
-  _minStayTime: 15
+  _minStayTime: 5

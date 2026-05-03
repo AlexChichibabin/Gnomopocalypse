@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LevelConfig
   m_EditorClassIdentifier: Assembly-CSharp::LevelConfig
   SceneName: GameplayScene
-  UnitCountToWin: 5
+  UnitCountToWin: 20
   enemySpawnerDatas: []
