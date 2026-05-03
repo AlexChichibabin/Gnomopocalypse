@@ -14,6 +14,7 @@ public class Unit : MonoBehaviour
     private UnitsFactory factory;
     private UnitConfig _config;
     private IConfigProvider _configProvider;
+    private IAudioService _audioService;
     private Coroutine _lifePhaseRoutine;
     private Coroutine _deathRoutine;
     private bool _isDead;
@@ -25,8 +26,14 @@ public class Unit : MonoBehaviour
     public UnitType UnitType { get; private set; }
 
     [Inject]
-    public void Construct(IConfigProvider configProvider) =>
-       _configProvider = configProvider;
+    public void Construct(
+        IConfigProvider configProvider,
+		IAudioService audioService)
+    {
+		_configProvider = configProvider;
+        _audioService = audioService;
+	}
+       
 
     public void SetPool(UnitsFactory factory) => this.factory = factory;
 
@@ -168,10 +175,16 @@ public class Unit : MonoBehaviour
             _unitAnimator.Init(config.UnitType);
 
         _unitMove.Init(config.StartMoveSpeed);
-        _unitHealth.Init(config.StartHealth, config.MainDamagePercent, config.SecondaryDamagePercent, resetHealth);
-    }
 
-    private void OnZeroHealth()
+        _unitHealth.Init(
+            config.StartHealth, 
+            config.MainDamagePercent, 
+            config.SecondaryDamagePercent,
+            _audioService,
+			resetHealth);
+	}
+
+	private void OnZeroHealth()
     {
         Debug.Log("Gnome is dead");
 

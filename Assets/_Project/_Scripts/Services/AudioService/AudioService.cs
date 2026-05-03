@@ -57,6 +57,7 @@ public class AudioService : IAudioService
 	public void PlayMusic(MusicId id)
 	{
 		if (config.Musics == null) return;
+		if (musics[id].Clip == null) return;
 		if (musicSource.clip == musics[id].Clip && musicSource.isPlaying)
 			return;
 

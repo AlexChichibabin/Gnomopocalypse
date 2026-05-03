@@ -8,6 +8,8 @@ public class Shooting : MonoBehaviour
     [SerializeField] private float _power = 8f;
     [SerializeField] private float _maxDragDistance = 2f;
 
+    private IAudioService audioService;
+
     private Transform _anchor;
     private Rigidbody2D _rigidbody;
     private Camera _camera;
@@ -21,9 +23,11 @@ public class Shooting : MonoBehaviour
     public event Action Released;
 
     [Inject]
-    public void Construct(IInputService input)
+    public void Construct(IInputService input,
+		IAudioService audioService)
     {
         _input = input;
+        this.audioService = audioService;
         SubscribeInput();
     }
 
@@ -107,6 +111,7 @@ public class Shooting : MonoBehaviour
         _rigidbody.linearVelocity = Vector2.zero;
         _rigidbody.angularVelocity = 0f;
         _rigidbody.AddForce(forceDirection * _power, ForceMode2D.Impulse);
+        audioService.PlaySound(SoundId.Shooting);
 
         IsMoving = true;
         Released?.Invoke();
