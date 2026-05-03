@@ -196,7 +196,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 12
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8245312878052543650, guid: d65a0b887bfcb8549b2878d31aef012e, type: 3}
+  m_Sprite: {fileID: -4660475226232364364, guid: d5c242b68afce364bb9ff35a9f382c62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -725,6 +725,7 @@ GameObject:
   - component: {fileID: 5057841788971828481}
   - component: {fileID: 7744504077603833904}
   - component: {fileID: 8058583965106230861}
+  - component: {fileID: 6181770446232904342}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Untagged
@@ -806,6 +807,7 @@ MonoBehaviour:
   _unitMove: {fileID: 5057841788971828481}
   _unitHealth: {fileID: 7744504077603833904}
   _unitView: {fileID: 8058583965106230861}
+  _unitAnimator: {fileID: 6181770446232904342}
 --- !u!114 &5057841788971828481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,6 +848,22 @@ MonoBehaviour:
   _dirty: {fileID: 7636159963577912736}
   _leaking: {fileID: 549210123371712102}
   _sticky: {fileID: 3824544498927451774}
+--- !u!114 &6181770446232904342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8325738064408767118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c847927dbf05afe40b673876214a2b8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAnimator
+  _smellyAnimator: {fileID: 8645474840429074900}
+  _dirtyAnimator: {fileID: 4871920880429469303}
+  _leakingAnimator: {fileID: 5267429497537212076}
+  _stickyAnimator: {fileID: 8564314854354014023}
 --- !u!1 &8709514008836572722
 GameObject:
   m_ObjectHideFlags: 0

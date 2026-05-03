@@ -9,11 +9,14 @@ public class Unit : MonoBehaviour
     [SerializeField] private UnitMove _unitMove;
     [SerializeField] private UnitHealth _unitHealth;
     [SerializeField] private UnitView _unitView;
+    [SerializeField] private UnitAnimator _unitAnimator;
 
     private UnitsFactory factory;
     private UnitConfig _config;
     private IConfigProvider _configProvider;
     private Coroutine _lifePhaseRoutine;
+    private Coroutine _deathRoutine;
+    private bool _isDead;
 
     public event Action Mutated;
 
@@ -29,8 +32,10 @@ public class Unit : MonoBehaviour
 
     private void OnSpawned(UnitConfig config)
     {
+        _isDead = false;
+        StopDeathRoutine();
         _unitHealth.ZeroHealth -= OnZeroHealth;
-        ApplyConfig(config);
+        ApplyConfig(config, true);
         _unitHealth.ZeroHealth += OnZeroHealth;
 
         StartLifePhase();
@@ -42,9 +47,9 @@ public class Unit : MonoBehaviour
         _lifePhaseRoutine = StartCoroutine(LifePhaseRoutine());
     }
 
-     private IEnumerator LifePhaseRoutine()
+    private IEnumerator LifePhaseRoutine()
     {
-        while (_config != null)
+        while (_config != null && !_isDead)
         {
             UnitConfig currentConfig = _config;
 
@@ -61,13 +66,22 @@ public class Unit : MonoBehaviour
             if (mutationUnitConfig == null || mutationUnitConfig == _config)
                 continue;
 
+            if (IsDead())
+                yield break;
+
+            yield return DrinkRoutine();
+
+            if (IsDead())
+                yield break;
+
             Mutation(mutationUnitConfig);
+            _unitMove.Run();
         }
     }
 
      private void Mutation(UnitConfig config)
     {
-        ApplyConfig(config);
+        ApplyConfig(config, false);
         Mutated?.Invoke();
     }
 
@@ -80,9 +94,68 @@ public class Unit : MonoBehaviour
         _lifePhaseRoutine = null;
     }
 
+    private IEnumerator DrinkRoutine()
+    {
+        if (IsDead())
+            yield break;
+
+        _unitMove.Immobilize();
+
+        if (_unitAnimator == null)
+            yield break;
+
+        yield return PlayAnimationAndWaitForEnd(_unitAnimator.PlayDrink);
+    }
+
+    private IEnumerator DeathRoutine()
+    {
+        _unitMove.Immobilize();
+
+        if (_unitAnimator != null)
+            yield return PlayAnimationAndWaitForEnd(_unitAnimator.PlayDeath);
+
+        _deathRoutine = null;
+        factory.DespawnUnit(this);
+    }
+
+    private IEnumerator PlayAnimationAndWaitForEnd(Action playAnimation)
+    {
+        bool isAnimationEnded = false;
+
+        void OnAnimationEnded() => isAnimationEnded = true;
+
+        try
+        {
+            _unitAnimator.AnimationEnded += OnAnimationEnded;
+            playAnimation?.Invoke();
+
+            // temp
+            float timeoutTime = Time.time + 3f;
+            yield return new WaitUntil(() => isAnimationEnded || Time.time >= timeoutTime);
+        }
+        finally
+        {
+            _unitAnimator.AnimationEnded -= OnAnimationEnded;
+        }
+    }
+
+    private void StopDeathRoutine()
+    {
+        if (_deathRoutine == null)
+            return;
+
+        StopCoroutine(_deathRoutine);
+        _deathRoutine = null;
+    }
+
+    private bool IsDead()
+    {
+        return _isDead || _unitHealth.CurrentHealth <= 0;
+    }
 
 
-    private void ApplyConfig(UnitConfig config)
+
+    private void ApplyConfig(UnitConfig config, bool resetHealth)
     {
         if (config == null)
             return;
@@ -91,19 +164,30 @@ public class Unit : MonoBehaviour
         UnitType = config.UnitType;
 
         _unitView.Init(config.UnitType);
+        if (_unitAnimator != null)
+            _unitAnimator.Init(config.UnitType);
+
         _unitMove.Init(config.StartMoveSpeed);
-        _unitHealth.Init(config.StartHealth, config.MainDamagePercent, config.SecondaryDamagePercent);
+        _unitHealth.Init(config.StartHealth, config.MainDamagePercent, config.SecondaryDamagePercent, resetHealth);
     }
 
     private void OnZeroHealth()
     {
         Debug.Log("Gnome is dead");
 
-        factory.DespawnUnit(this);
+        if (_isDead)
+            return;
+
+        _isDead = true;
+        StopLifePhase();
+        StopDeathRoutine();
+        _deathRoutine = StartCoroutine(DeathRoutine());
     }
 
     private void OnDespawned()
     {
+        StopLifePhase();
+        StopDeathRoutine();
         _unitHealth.ZeroHealth -= OnZeroHealth;
         Debug.Log("[Unit] Despawned");
     }

@@ -12,13 +12,16 @@ public class UnitHealth : MonoBehaviour
     public event Action ZeroHealth;
     public event Action<float, float> HealthChanged;
 
-    public void Init(float startHealth, float mainDamage, float secondaryDamage)
+    public void Init(float startHealth, float mainDamage, float secondaryDamage, bool resetHealth = true)
     {
         _startHealth = startHealth;
         _mainDamage = mainDamage;
         _secondaryDamage = secondaryDamage;
 
-        ResetHealth();
+        if (resetHealth)
+            ResetHealth();
+        else
+            HealthChanged?.Invoke(CurrentHealth, _startHealth);
     }
 
     public void DealMainDamage()
