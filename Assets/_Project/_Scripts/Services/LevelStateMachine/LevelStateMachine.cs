@@ -21,17 +21,20 @@ public class LevelStateMachine : ILevelStateMachine
 	private IInputService inputService;
 	private IPlayerHealth playerHealth;
 	private IUnitTracker unitTracker;
+	private IAudioService audioService;
 
 	public LevelStateMachine(
 		IConfigProvider configProvider,
 		IInputService inputService,
 		IPlayerHealth playerHealth,
-		IUnitTracker unitTracker)
+		IUnitTracker unitTracker,
+		IAudioService audioService)
 	{
 		this.configProvider = configProvider;
 		this.inputService = inputService;
 		this.playerHealth = playerHealth;
 		this.unitTracker = unitTracker;
+		this.audioService = audioService;
 	}
 
 	public void ApplyState(LevelState state)
@@ -73,7 +76,7 @@ public class LevelStateMachine : ILevelStateMachine
 		LevelConfig levelConfig = configProvider.GetLevel(sceneName);
 		playerHealth.RestoreHealth();
 		unitTracker.Init();
-
+		audioService.PlayMusic(MusicId.Gameplay);
 
 		StateChanged?.Invoke(currentState);
 
@@ -95,7 +98,7 @@ public class LevelStateMachine : ILevelStateMachine
 		if (currentState != LevelState.Gameplay) return;
 
 		currentState = LevelState.Win;
-
+		audioService.PlayMusic(MusicId.Win);
 
 		StateChanged?.Invoke(currentState);
 	}
@@ -104,7 +107,7 @@ public class LevelStateMachine : ILevelStateMachine
 		if (currentState != LevelState.Gameplay) return;
 
 		currentState = LevelState.Lose;
-
+		audioService.PlayMusic(MusicId.Lose);
 
 		StateChanged?.Invoke(currentState);
 	}

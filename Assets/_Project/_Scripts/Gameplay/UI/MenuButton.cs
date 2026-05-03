@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
 
-public class MenuButton : MonoBehaviour
+public class MenuButton : ButtonBase
 {
 	private Button button;
 	private IGameStateMachine gameStateMachine;
