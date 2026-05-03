@@ -1,106 +1,52 @@
 fileFormatVersion: 2
-guid: ddce114dbf2a33c42b75f1d9a8c8139a
+guid: 78eb88ca26e7b1444b8339b53bf40fa2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3940613527829554406
-    second: BIG_DRINK_NEW_0
+      213: -5527347549969532205
+    second: BIG_DEATH_0
   - first:
-      213: 6453319256583493224
-    second: BIG_DRINK_NEW_1
+      213: -8034680800305924807
+    second: BIG_DEATH_1
   - first:
-      213: 1559259712888805379
-    second: BIG_DRINK_NEW_2
+      213: 6668274769985259357
+    second: BIG_DEATH_2
   - first:
-      213: 6828182788371861048
-    second: BIG_DRINK_NEW_3
+      213: -8220345328288448765
+    second: BIG_DEATH_3
   - first:
-      213: -2841098668815119589
-    second: BIG_DRINK_NEW_4
+      213: 4941297077157150174
+    second: BIG_DEATH_4
   - first:
-      213: -461438801981764911
-    second: BIG_DRINK_NEW_5
+      213: 3652800601454950079
+    second: BIG_DEATH_5
   - first:
-      213: 5939764337152300701
-    second: BIG_DRINK_NEW_6
+      213: 8946859740907156878
+    second: BIG_DEATH_6
   - first:
-      213: -3411775491806184769
-    second: BIG_DRINK_NEW_7
+      213: -3300038004384644575
+    second: BIG_DEATH_7
   - first:
-      213: -9214332710799686835
-    second: BIG_DRINK_NEW_8
+      213: 6273003856580066526
+    second: BIG_DEATH_8
   - first:
-      213: -6014151691840796808
-    second: BIG_DRINK_NEW_9
+      213: -8536067892147444520
+    second: BIG_DEATH_9
   - first:
-      213: -7995389548859079654
-    second: BIG_DRINK_NEW_10
+      213: 5597723569912666898
+    second: BIG_DEATH_10
   - first:
-      213: 8905908703678808459
-    second: BIG_DRINK_NEW_11
+      213: -8722647773175800032
+    second: BIG_DEATH_11
   - first:
-      213: 3474384845760981055
-    second: BIG_DRINK_NEW_12
+      213: 2832162703702900523
+    second: BIG_DEATH_12
   - first:
-      213: -3741111431473538695
-    second: BIG_DRINK_NEW_13
+      213: -7803660576558645247
+    second: BIG_DEATH_13
   - first:
-      213: 265525636320261089
-    second: BIG_DRINK_NEW_14
-  - first:
-      213: -8315359625789597004
-    second: BIG_DRINK_NEW_15
-  - first:
-      213: 1011688148603910235
-    second: BIG_DRINK_NEW_16
-  - first:
-      213: 7025142523550450511
-    second: BIG_DRINK_NEW_17
-  - first:
-      213: 6154074798473746445
-    second: BIG_DRINK_NEW_18
-  - first:
-      213: 2539001867702253152
-    second: BIG_DRINK_NEW_19
-  - first:
-      213: 6973244430964993419
-    second: BIG_DRINK_NEW_20
-  - first:
-      213: -4728342466270451315
-    second: BIG_DRINK_NEW_21
-  - first:
-      213: -3011125518280166592
-    second: BIG_DRINK_NEW_22
-  - first:
-      213: 6331358723905608870
-    second: BIG_DRINK_NEW_23
-  - first:
-      213: 453159281109654388
-    second: BIG_DRINK_NEW_24
-  - first:
-      213: -8852096722183997285
-    second: BIG_DRINK_NEW_25
-  - first:
-      213: 2995684389155032280
-    second: BIG_DRINK_NEW_26
-  - first:
-      213: 8493443096589285461
-    second: BIG_DRINK_NEW_27
-  - first:
-      213: 4870898365079482882
-    second: BIG_DRINK_NEW_28
-  - first:
-      213: 5332189352753467497
-    second: BIG_DRINK_NEW_29
-  - first:
-      213: -724391963539470055
-    second: BIG_DRINK_NEW_30
-  - first:
-      213: -1132971658989120970
-    second: BIG_DRINK_NEW_31
-  - first:
-      213: 1891096759663866372
-    second: BIG_DRINK_NEW_32
+      213: -1848705590914615389
+    second: BIG_DEATH_14
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -235,7 +181,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BIG_DRINK_0
+      name: BIG_DEATH_0
       rect:
         serializedVersion: 2
         x: 0
@@ -248,16 +194,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a850c68e0c8e40c4f82caeb1f2e160c1
-      internalID: -2129321218
+      spriteID: 3dab0fd30baea43b0800000000000000
+      internalID: -5527347549969532205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BIG_DRINK_1
+      name: BIG_DEATH_1
       rect:
         serializedVersion: 2
         x: 64
@@ -270,16 +216,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 764ca9af0525a7d45987369aa9e40836
-      internalID: 724016680
+      spriteID: 9353d16b1641f7090800000000000000
+      internalID: -8034680800305924807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BIG_DRINK_2
+      name: BIG_DEATH_2
       rect:
         serializedVersion: 2
         x: 128
@@ -292,16 +238,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9e31986c82570db448a416cb44b61c19
-      internalID: -863100035
+      spriteID: d57cba1c2987a8c50800000000000000
+      internalID: 6668274769985259357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BIG_DRINK_3
+      name: BIG_DEATH_3
       rect:
         serializedVersion: 2
         x: 192
@@ -314,16 +260,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6bff76c463b5d994f83e8018b02718a8
-      internalID: 190916912
+      spriteID: 30f33582a777bed80800000000000000
+      internalID: -8220345328288448765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BIG_DRINK_4
+      name: BIG_DEATH_4
       rect:
         serializedVersion: 2
         x: 256
@@ -336,16 +282,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0482b3ed305c0b849ac1db16411deb09
-      internalID: 1972073698
+      spriteID: eddb0a5f283039440800000000000000
+      internalID: 4941297077157150174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BIG_DRINK_5
+      name: BIG_DEATH_5
       rect:
         serializedVersion: 2
         x: 320
@@ -358,16 +304,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e86d06773859c754c90b0faa5e445be0
-      internalID: -163786708
+      spriteID: fb63e0d2bca51b230800000000000000
+      internalID: 3652800601454950079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BIG_DRINK_6
+      name: BIG_DEATH_6
       rect:
         serializedVersion: 2
         x: 384
@@ -380,16 +326,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0361c4210a15da5479efa50b46e4e10e
-      internalID: 441598399
+      spriteID: e85b3082881a92c70800000000000000
+      internalID: 8946859740907156878
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BIG_DRINK_7
+      name: BIG_DEATH_7
       rect:
         serializedVersion: 2
         x: 448
@@ -402,16 +348,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5cffe8e299407f24486704799d69d458
-      internalID: -77026219
+      spriteID: 1224d5b5be8e332d0800000000000000
+      internalID: -3300038004384644575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BIG_DRINK_8
+      name: BIG_DEATH_8
       rect:
         serializedVersion: 2
         x: 512
@@ -424,16 +370,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5bc70d1b5e840d445b861c5674e8c91c
-      internalID: 1677843962
+      spriteID: edc3c1295cf2e0750800000000000000
+      internalID: 6273003856580066526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BIG_DRINK_9
+      name: BIG_DEATH_9
       rect:
         serializedVersion: 2
         x: 576
@@ -446,16 +392,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4ecfc34632a2dd54f8564e2d5faa6675
-      internalID: -1033975167
+      spriteID: 8d42fe56a7bc98980800000000000000
+      internalID: -8536067892147444520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BIG_DRINK_10
+      name: BIG_DEATH_10
       rect:
         serializedVersion: 2
         x: 640
@@ -468,16 +414,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c1af020be8bec774f91930f8690b551c
-      internalID: -748766025
+      spriteID: 21bd977cdeb1fad40800000000000000
+      internalID: 5597723569912666898
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BIG_DRINK_11
+      name: BIG_DEATH_11
       rect:
         serializedVersion: 2
         x: 704
@@ -490,16 +436,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b34e50b958458474fb24c9174f3f6525
-      internalID: 515385309
+      spriteID: 02f110b901ee2f680800000000000000
+      internalID: -8722647773175800032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BIG_DRINK_12
+      name: BIG_DEATH_12
       rect:
         serializedVersion: 2
         x: 768
@@ -512,16 +458,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b6f049e35a98ac84c9812bbfb77f687e
-      internalID: 683989949
+      spriteID: b2f325c39fcdd4720800000000000000
+      internalID: 2832162703702900523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BIG_DRINK_13
+      name: BIG_DEATH_13
       rect:
         serializedVersion: 2
         x: 832
@@ -534,98 +480,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3aa069ddadf00c148bcf0763770e4106
-      internalID: -1945332294
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BIG_DRINK_14
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11d4d8b029499fb47b6d8896e7a880aa
-      internalID: 494961498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BIG_DRINK_15
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a943a2c04edf5544b996bd5730a4125e
-      internalID: -1327757726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BIG_DRINK_16
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a723a35df728cf4893ce570430cae89
-      internalID: -102451888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BIG_DRINK_17
-      rect:
-        serializedVersion: 2
-        x: 1088
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75613343c4a99ab4e912f8393120e84f
-      internalID: 1085969330
+      spriteID: 100808a1d04d3b390800000000000000
+      internalID: -7803660576558645247
       vertices: []
       indices: 
       edges: []
@@ -634,7 +492,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f6c655e184ef5134f8c867734015dee8
+    spriteID: 6dca678ab743f2240b4d8955aa3a746b
     internalID: 0
     vertices: []
     indices: 
@@ -644,26 +502,22 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":18.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":14.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      BIG_DRINK_0: -2129321218
-      BIG_DRINK_1: 724016680
-      BIG_DRINK_10: -748766025
-      BIG_DRINK_11: 515385309
-      BIG_DRINK_12: 683989949
-      BIG_DRINK_13: -1945332294
-      BIG_DRINK_14: 494961498
-      BIG_DRINK_15: -1327757726
-      BIG_DRINK_16: -102451888
-      BIG_DRINK_17: 1085969330
-      BIG_DRINK_2: -863100035
-      BIG_DRINK_3: 190916912
-      BIG_DRINK_4: 1972073698
-      BIG_DRINK_5: -163786708
-      BIG_DRINK_6: 441598399
-      BIG_DRINK_7: -77026219
-      BIG_DRINK_8: 1677843962
-      BIG_DRINK_9: -1033975167
+      BIG_DEATH_0: -5527347549969532205
+      BIG_DEATH_1: -8034680800305924807
+      BIG_DEATH_10: 5597723569912666898
+      BIG_DEATH_11: -8722647773175800032
+      BIG_DEATH_12: 2832162703702900523
+      BIG_DEATH_13: -7803660576558645247
+      BIG_DEATH_2: 6668274769985259357
+      BIG_DEATH_3: -8220345328288448765
+      BIG_DEATH_4: 4941297077157150174
+      BIG_DEATH_5: 3652800601454950079
+      BIG_DEATH_6: 8946859740907156878
+      BIG_DEATH_7: -3300038004384644575
+      BIG_DEATH_8: 6273003856580066526
+      BIG_DEATH_9: -8536067892147444520
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

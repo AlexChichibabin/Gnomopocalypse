@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SpawnRateConfig
   m_EditorClassIdentifier: Assembly-CSharp::SpawnRateConfig
   _spawnRateSteps:
-  - _minute: 1
-    _unitsPerMinute: 30
+  - _minute: 2
+    _unitsPerMinute: 10
     _pauseUntilNextWave: 5
   - _minute: 0.5
     _unitsPerMinute: 25
