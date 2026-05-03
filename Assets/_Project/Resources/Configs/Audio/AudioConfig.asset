@@ -42,10 +42,10 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 3a425c82a927c3e42bbcf8e8451ae965, type: 3}
     Volume: 1
   - Id: 2
-    Clip: {fileID: 0}
+    Clip: {fileID: 8300000, guid: 839b8cd9fea93e2409c4d71ad1bfa268, type: 3}
     Volume: 1
   - Id: 3
-    Clip: {fileID: 0}
+    Clip: {fileID: 8300000, guid: 24a20b18fa562c846a1d34385ccc3010, type: 3}
     Volume: 1
   SfxMixerGroup: {fileID: -927289537027501413, guid: 1247bbc23ecd9e843a1ad960f7858537, type: 2}
   MusicMixerGroup: {fileID: -156469527456860277, guid: 1247bbc23ecd9e843a1ad960f7858537, type: 2}
