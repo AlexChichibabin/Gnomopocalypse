@@ -14,7 +14,7 @@ public class PausePanel : MonoBehaviour
 	}
 	private void Start()
 	{
-		pauseState.IsPaused += OnPausedChanged;
+		pauseState.IsPausedEvent += OnPausedChanged;
 		//gameObject.SetActive(false);
 	}
 
@@ -24,6 +24,6 @@ public class PausePanel : MonoBehaviour
 	}
 	private void OnDestroy()
 	{
-		pauseState.IsPaused -= OnPausedChanged;
+		pauseState.IsPausedEvent -= OnPausedChanged;
 	}
 }
