@@ -41,4 +41,23 @@ public class UnitView : MonoBehaviour
         if (unitView != null)
             unitView.SetActive(isActive);
     }
+
+    public void SetSortingOrder(int sortingOrder)
+    {
+        SetSortingOrder(_smelly, sortingOrder);
+        SetSortingOrder(_dirty, sortingOrder);
+        SetSortingOrder(_leaking, sortingOrder);
+        SetSortingOrder(_sticky, sortingOrder);
+    }
+
+    private void SetSortingOrder(GameObject unitView, int sortingOrder)
+    {
+        if (unitView == null)
+            return;
+
+        SpriteRenderer spriteRenderer = unitView.GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer != null)
+            spriteRenderer.sortingOrder = sortingOrder;
+    }
 }

@@ -5,6 +5,10 @@ using Zenject;
 
 public class UnitsFactory : IInitializable, ILateDisposable
 {
+    private const int SpawnYPositionsCount = 7;
+    private const int HighestYSortingOrder = 13;
+    private const int LowestYSortingOrder = HighestYSortingOrder + SpawnYPositionsCount - 1;
+
     private Unit.UnitPool _unitPool;
     private IConfigProvider _configProvider;
     private ICoroutineRunner _coroutineRunner;
@@ -137,18 +141,40 @@ public class UnitsFactory : IInitializable, ILateDisposable
 
         Unit unit = _unitPool.Spawn(unitConfig);
         unit.SetPool(this);
-        unit.transform.position = GetRandomSpawnPosition();
+        SpawnPosition spawnPosition = GetRandomSpawnPosition();
+        unit.transform.position = spawnPosition.Position;
+        unit.SetSortingOrder(spawnPosition.SortingOrder);
     }
 	public void DespawnUnit(Unit unit)
 	{
         _unitPool.Despawn(unit);
         _unitTracker.AddUnitDeath();
 	}
-	private Vector3 GetRandomSpawnPosition()
+	private SpawnPosition GetRandomSpawnPosition()
     {
-        Vector2 offset = UnityEngine.Random.insideUnitCircle * _spawnSettings.SpawnRadius;
+        float spawnRadius = _spawnSettings.SpawnRadius;
+        int yPositionIndex = UnityEngine.Random.Range(0, SpawnYPositionsCount);
+        float normalizedYPosition = yPositionIndex / (float)(SpawnYPositionsCount - 1);
+        float yOffset = Mathf.Lerp(-spawnRadius, spawnRadius, normalizedYPosition);
+        float maxXOffset = Mathf.Sqrt(spawnRadius * spawnRadius - yOffset * yOffset);
+        float xOffset = UnityEngine.Random.Range(-maxXOffset, maxXOffset);
+        int sortingOrder = LowestYSortingOrder - yPositionIndex;
 
-        return _spawnSettings.SpawnPoint + new Vector3(offset.x, offset.y, 0);
+        return new SpawnPosition(
+            _spawnSettings.SpawnPoint + new Vector3(xOffset, yOffset, 0),
+            sortingOrder);
+    }
+
+    private readonly struct SpawnPosition
+    {
+        public SpawnPosition(Vector3 position, int sortingOrder)
+        {
+            Position = position;
+            SortingOrder = sortingOrder;
+        }
+
+        public Vector3 Position { get; }
+        public int SortingOrder { get; }
     }
 
     public void LateDispose()
