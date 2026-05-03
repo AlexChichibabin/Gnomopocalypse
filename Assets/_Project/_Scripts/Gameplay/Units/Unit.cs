@@ -15,6 +15,7 @@ public class Unit : MonoBehaviour
     private UnitConfig _config;
     private IConfigProvider _configProvider;
     private IAudioService _audioService;
+    private IPauseState _pauseState;
     private Coroutine _lifePhaseRoutine;
     private Coroutine _deathRoutine;
     private bool _isDead;
@@ -28,10 +29,12 @@ public class Unit : MonoBehaviour
     [Inject]
     public void Construct(
         IConfigProvider configProvider,
-		IAudioService audioService)
+		IAudioService audioService,
+        IPauseState pauseState)
     {
 		_configProvider = configProvider;
         _audioService = audioService;
+        _pauseState = pauseState;
 	}
        
 
@@ -44,11 +47,20 @@ public class Unit : MonoBehaviour
         _unitHealth.ZeroHealth -= OnZeroHealth;
         ApplyConfig(config, true);
         _unitHealth.ZeroHealth += OnZeroHealth;
+        _pauseState.IsPaused += OnPauseChanged;
 
         StartLifePhase();
     }
 
-     private void StartLifePhase()
+	private void OnPauseChanged(bool isPaused)
+	{
+		if (isPaused == true)
+			_unitMove.enabled = false;
+        else
+            _unitMove.enabled = true;
+	}
+
+	private void StartLifePhase()
     {
         StopLifePhase();
         _lifePhaseRoutine = StartCoroutine(LifePhaseRoutine());
