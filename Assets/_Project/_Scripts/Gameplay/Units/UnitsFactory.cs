@@ -106,7 +106,7 @@ public class UnitsFactory : IInitializable, ILateDisposable
 		if (step.PauseUntilNextWave <= 0)
             yield break;
 
-        Debug.Log($"[UnitsFactory] Pause before next wave: {step.PauseUntilNextWave} seconds");
+        //Debug.Log($"[UnitsFactory] Pause before next wave: {step.PauseUntilNextWave} seconds");
         yield return new WaitForSeconds(step.PauseUntilNextWave);
     }
 
