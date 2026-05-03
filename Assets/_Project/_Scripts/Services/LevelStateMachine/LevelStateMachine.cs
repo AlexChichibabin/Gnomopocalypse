@@ -98,7 +98,7 @@ public class LevelStateMachine : ILevelStateMachine
 		if (currentState != LevelState.Gameplay) return;
 
 		currentState = LevelState.Win;
-
+		audioService.PlayMusic(MusicId.Win);
 
 		StateChanged?.Invoke(currentState);
 	}
@@ -107,7 +107,7 @@ public class LevelStateMachine : ILevelStateMachine
 		if (currentState != LevelState.Gameplay) return;
 
 		currentState = LevelState.Lose;
-
+		audioService.PlayMusic(MusicId.Lose);
 
 		StateChanged?.Invoke(currentState);
 	}
