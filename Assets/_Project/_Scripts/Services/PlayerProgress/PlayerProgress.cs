@@ -31,4 +31,9 @@ public class PlayerProgress : IPlayerProgress
 		}
 		return levelList[levelList.Length - 1];
 	}
+
+	public void AddScore(LevelConfig config, int score)
+	{
+		levelProgress[config] = 3;
+	}
 }

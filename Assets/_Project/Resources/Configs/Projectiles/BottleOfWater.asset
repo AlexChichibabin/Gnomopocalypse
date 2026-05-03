@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BottleOfWater
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileConfig
   _projectileType: 3
-  _shootPower: 12
+  _shootPower: 25
   _maxDragDistance: 3
   _uiSprite: {fileID: -5755541774972867788, guid: de74c65b7dab8aa4597fe8cacdd80f48, type: 3}
   _objSprite: {fileID: -5755541774972867788, guid: de74c65b7dab8aa4597fe8cacdd80f48, type: 3}

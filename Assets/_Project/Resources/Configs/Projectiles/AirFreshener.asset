@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AirFreshener
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileConfig
   _projectileType: 0
-  _shootPower: 12
+  _shootPower: 25
   _maxDragDistance: 3
   _uiSprite: {fileID: -6002039519333903949, guid: 98f7e226be2ce51498f015cb885b92a8, type: 3}
   _objSprite: {fileID: -6002039519333903949, guid: 98f7e226be2ce51498f015cb885b92a8, type: 3}

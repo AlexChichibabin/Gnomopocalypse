@@ -50,11 +50,13 @@ public class WinLosePanel : MonoBehaviour
 			var sceneName = SceneManager.GetActiveScene().name;
 			if (sceneName == progress.GetNextLevelConfig().name)
 			{
+				nextLevelButton.gameObject.SetActive(false);
+			}
+			else
+			{
 				nextLevelButton.gameObject.SetActive(true);
 				nextLevelButton.onClick.AddListener(LoadNext);
 			}
-			else
-				nextLevelButton.gameObject.SetActive(false);
 		}
         else
         {
