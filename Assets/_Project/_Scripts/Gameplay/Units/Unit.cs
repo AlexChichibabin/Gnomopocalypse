@@ -184,7 +184,7 @@ public class Unit : MonoBehaviour
 
         _unitView.Init(config.UnitType);
         if (_unitAnimator != null)
-            _unitAnimator.Init(config.UnitType);
+            _unitAnimator.Init(config.UnitType, resetHealth);
 
         _unitMove.Init(config.StartMoveSpeed);
 

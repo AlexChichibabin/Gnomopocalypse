@@ -7,8 +7,10 @@ public class UnitAnimator : MonoBehaviour
     [SerializeField] private Animator _dirtyAnimator;
     [SerializeField] private Animator _leakingAnimator;
     [SerializeField] private Animator _stickyAnimator;
+    [SerializeField] private Animator _pufAnimator;
 
     private static readonly int WalkState = Animator.StringToHash("Walk");
+    private static readonly int PufState = Animator.StringToHash("PUF");
     private static readonly int DrinkTrigger = Animator.StringToHash("drink");
     private static readonly int DeathTrigger = Animator.StringToHash("death");
 
@@ -25,21 +27,27 @@ public class UnitAnimator : MonoBehaviour
         EnsureEventReceiver(_stickyAnimator);
     }
 
-    public void Init(UnitType unitType)
+    public void Init(UnitType unitType, bool resetPuf = false)
     {
         if (_currentEventReceiver != null)
+        {
             _currentEventReceiver.Ended -= OnAnimationEnded;
+            _currentEventReceiver.Pufed -= PlayPuf;
+        }
 
         _currentAnimator = GetAnimator(unitType);
         _currentEventReceiver = EnsureEventReceiver(_currentAnimator);
 
         if (_currentEventReceiver != null)
+        {
             _currentEventReceiver.Ended += OnAnimationEnded;
+            _currentEventReceiver.Pufed += PlayPuf;
+        }
 
-        ResetAnimation();
+        ResetAnimation(resetPuf);
     }
 
-    private void ResetAnimation()
+    private void ResetAnimation(bool resetPuf = false)
     {
         if (_currentAnimator == null)
             return;
@@ -48,6 +56,9 @@ public class UnitAnimator : MonoBehaviour
         _currentAnimator.Rebind();
         _currentAnimator.Update(0f);
         _currentAnimator.Play(WalkState, 0, 0f);
+
+        if (resetPuf && _pufAnimator != null)
+            _pufAnimator.gameObject.SetActive(false);
     }
 
     public void PlayWalk()
@@ -112,5 +123,16 @@ public class UnitAnimator : MonoBehaviour
     private void OnAnimationEnded()
     {
         AnimationEnded?.Invoke();
+    }
+
+    private void PlayPuf()
+    {
+        if (_pufAnimator == null)
+            return;
+
+        _pufAnimator.gameObject.SetActive(true);
+        _pufAnimator.Rebind();
+        _pufAnimator.Update(0f);
+        _pufAnimator.Play(PufState, 0, 0f);
     }
 }
