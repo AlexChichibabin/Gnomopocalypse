@@ -1,13 +1,14 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using Zenject;
 
-public class PlayButton : MonoBehaviour
+public class PlayButton : ButtonBase
 {
 	private Button button;
 	private IGameStateMachine gameStateMachine;
+
 
 	[Inject]
 	public void Construct(
@@ -19,6 +20,7 @@ public class PlayButton : MonoBehaviour
 	{
 		button = GetComponent<Button>();
 		button.onClick.AddListener(OnClick);
+
 	}
 	private void OnClick()
 	{
@@ -26,4 +28,5 @@ public class PlayButton : MonoBehaviour
 
 		gameStateMachine.ApplyState(GameState.LoadLevel);
 	}
+
 }
