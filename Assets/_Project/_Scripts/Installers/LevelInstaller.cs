@@ -69,6 +69,8 @@ public class LevelInstaller : MonoInstaller
         Container.BindInterfacesAndSelfTo<GameCondition>().AsSingle();
         
         Container.Bind<IUnitTracker>().To<UnitTracker>().AsSingle();
+
+        Container.Bind<IPauseState>().To<PauseState>().AsSingle();
     }
 	private void RegisterSimpleStateMachine()
 	{
