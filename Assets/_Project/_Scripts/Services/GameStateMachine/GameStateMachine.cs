@@ -79,12 +79,8 @@ public class GameStateMachine : IGameStateMachine
 	}
 	private void ApplyLoadLevel()
 	{
-		//if (currentState != GameState.Bootstrap) return;
-
 		Debug.Log("GLOBAL: LoadLevel");
 		currentState = GameState.LoadLevel;
-
-		//string sceneName = configProvider.GetLevel(0).SceneName;
 
 		string sceneName = progress.GetNextLevelConfig().SceneName;
 

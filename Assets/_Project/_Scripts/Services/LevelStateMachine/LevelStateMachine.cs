@@ -23,6 +23,7 @@ public class LevelStateMachine : ILevelStateMachine
 	private IUnitTracker unitTracker;
 	private IAudioService audioService;
 	private IPauseState pauseState;
+	private IPlayerProgress playerProgress;
 
 	public LevelStateMachine(
 		IConfigProvider configProvider,
@@ -30,7 +31,8 @@ public class LevelStateMachine : ILevelStateMachine
 		IPlayerHealth playerHealth,
 		IUnitTracker unitTracker,
 		IAudioService audioService,
-		IPauseState pauseState)
+		IPauseState pauseState,
+		IPlayerProgress playerProgress)
 	{
 		this.configProvider = configProvider;
 		this.inputService = inputService;
@@ -38,6 +40,7 @@ public class LevelStateMachine : ILevelStateMachine
 		this.unitTracker = unitTracker;
 		this.audioService = audioService;
 		this.pauseState = pauseState;
+		this.playerProgress = playerProgress;
 	}
 
 	public void ApplyState(LevelState state)
@@ -79,7 +82,11 @@ public class LevelStateMachine : ILevelStateMachine
 		LevelConfig levelConfig = configProvider.GetLevel(sceneName);
 		playerHealth.RestoreHealth();
 		unitTracker.Init();
-		audioService.PlayMusic(MusicId.Gameplay1);
+
+		if (sceneName == Constants.GameplaySceneName)
+			audioService.PlayMusic(MusicId.Gameplay1);
+		if (sceneName == Constants.Level2SceneName)
+			audioService.PlayMusic(MusicId.Gameplay2);
 		pauseState.UnPause();
 
 		StateChanged?.Invoke(currentState);
@@ -105,6 +112,10 @@ public class LevelStateMachine : ILevelStateMachine
 		audioService.PlaySound(SoundId.Win);
 		audioService.StopMusic();
 		pauseState.Pause();
+
+		string sceneName = SceneManager.GetActiveScene().name;
+		LevelConfig levelConfig = configProvider.GetLevel(sceneName);
+		playerProgress.AddScore(levelConfig, 3);
 
 		StateChanged?.Invoke(currentState);
 	}
