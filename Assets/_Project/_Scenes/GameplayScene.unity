@@ -4244,6 +4244,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -370374159531986394, guid: e9b5bc6ca9b4ca94eb469c78f42b1c0f, type: 3}
+    - target: {fileID: 2997308114689498395, guid: f4ac349503bb5534b9a5fb6729e00d73, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3314079428798513039, guid: f4ac349503bb5534b9a5fb6729e00d73, type: 3}
       propertyPath: m_Name
       value: ProjectileSelectionCanvas
