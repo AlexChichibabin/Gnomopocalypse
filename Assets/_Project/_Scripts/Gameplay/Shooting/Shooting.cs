@@ -115,6 +115,7 @@ public class Shooting : MonoBehaviour
         _rigidbody.linearVelocity = Vector2.zero;
         _rigidbody.angularVelocity = 0f;
         _rigidbody.AddForce(forceDirection * _power, ForceMode2D.Impulse);
+        _rigidbody.AddTorque(_power / 4, ForceMode2D.Impulse);
         audioService.PlaySound(SoundId.Shooting);
 
         IsMoving = true;
