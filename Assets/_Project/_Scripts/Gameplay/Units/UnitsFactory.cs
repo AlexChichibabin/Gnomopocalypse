@@ -123,7 +123,13 @@ public class UnitsFactory : IInitializable, ILateDisposable
         float spawnCount = step.Minute * step.UnitsPerMinute;
         float elapsedTime = 0f;
 
-        for (int i = 0; _canSpawn && i < spawnCount; i++)
+        if (spawnCount <= 0)
+            yield break;
+
+        while (isPaused) yield return null;
+        SpawnUnit();
+
+        for (int i = 1; _canSpawn && i < spawnCount; i++)
         {
 			while (isPaused) yield return null;
 			yield return new WaitForSeconds(spawnDelay);
