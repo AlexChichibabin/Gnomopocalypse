@@ -19,7 +19,7 @@ public class UnitTracker : IUnitTracker
 	public void Init()
 	{
 		allUnitCount = configProvider.GetLevel(SceneManager.GetActiveScene().name).UnitCountToWin;
-		Debug.Log(configProvider.GetLevel(SceneManager.GetActiveScene().name).UnitCountToWin);
+		//Debug.Log(configProvider.GetLevel(SceneManager.GetActiveScene().name).UnitCountToWin);
 	}
 	public void AddUnitDeath()
 	{

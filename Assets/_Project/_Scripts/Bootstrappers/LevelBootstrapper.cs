@@ -12,7 +12,7 @@ public class LevelBootstrapper : IInitializable
 
     public void Initialize()
     {
-        Debug.Log("LEVEL: Boot");
+        //Debug.Log("LEVEL: Boot");
         InitLevelStateMachine();
     }
 

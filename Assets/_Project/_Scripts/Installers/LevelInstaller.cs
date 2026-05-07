@@ -10,7 +10,7 @@ public class LevelInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-        Debug.Log("LEVEL: Install");
+        //Debug.Log("LEVEL: Install");
 
         RegisterSimpleStateMachine();
 

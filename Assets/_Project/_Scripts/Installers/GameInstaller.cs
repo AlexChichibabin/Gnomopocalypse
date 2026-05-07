@@ -9,7 +9,7 @@ public class GameInstaller : MonoInstaller
 
 	public override void InstallBindings()
 	{
-		Debug.Log("PROJECT: Install");
+		//Debug.Log("PROJECT: Install");
 
 
 		RegisterGameServices();

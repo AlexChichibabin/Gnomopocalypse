@@ -277,7 +277,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7301913204367722191, guid: b1d98127593339a40866fe1b2f68a4d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4301,11 +4301,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7162748895747909295, guid: f4ac349503bb5534b9a5fb6729e00d73, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -16
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 7162748895747909295, guid: f4ac349503bb5534b9a5fb6729e00d73, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 7444229384944582680, guid: f4ac349503bb5534b9a5fb6729e00d73, type: 3}
       propertyPath: m_AnchorMax.y

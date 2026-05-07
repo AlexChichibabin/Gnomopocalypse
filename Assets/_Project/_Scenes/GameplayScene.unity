@@ -4493,11 +4493,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7162748895747909295, guid: f4ac349503bb5534b9a5fb6729e00d73, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -16
+      value: -17.5
       objectReference: {fileID: 0}
     - target: {fileID: 7162748895747909295, guid: f4ac349503bb5534b9a5fb6729e00d73, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: -18.099976
       objectReference: {fileID: 0}
     - target: {fileID: 7444229384944582680, guid: f4ac349503bb5534b9a5fb6729e00d73, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5879,7 +5879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 64
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0

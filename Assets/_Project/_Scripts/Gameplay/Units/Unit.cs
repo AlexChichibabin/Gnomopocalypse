@@ -349,7 +349,7 @@ public class Unit : MonoBehaviour
 
 	private void OnZeroHealth()
     {
-        Debug.Log("Gnome is dead");
+        //Debug.Log("Gnome is dead");
 
         if (_isDead)
             return;
@@ -370,7 +370,7 @@ public class Unit : MonoBehaviour
         _pendingDamage.Clear();
         SetSortingConflictOffset(false);
         _unitHealth.ZeroHealth -= OnZeroHealth;
-        Debug.Log("[Unit] Despawned");
+        //Debug.Log("[Unit] Despawned");
     }
 
     public class UnitPool : MonoMemoryPool<UnitConfig, Unit>

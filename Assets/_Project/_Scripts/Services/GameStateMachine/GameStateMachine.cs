@@ -59,7 +59,7 @@ public class GameStateMachine : IGameStateMachine
 	}
 	private void ApplyBootstrap()
 	{
-		Debug.Log("GLOBAL: Init");
+		//Debug.Log("GLOBAL: Init");
 		currentState = GameState.Bootstrap;
 
 		Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.numerator;
@@ -79,7 +79,7 @@ public class GameStateMachine : IGameStateMachine
 	}
 	private void ApplyLoadLevel()
 	{
-		Debug.Log("GLOBAL: LoadLevel");
+		//Debug.Log("GLOBAL: LoadLevel");
 		currentState = GameState.LoadLevel;
 
 		string sceneName = progress.GetNextLevelConfig().SceneName;
@@ -87,7 +87,7 @@ public class GameStateMachine : IGameStateMachine
 		if (SceneManager.GetActiveScene().name != sceneName)
 		{
 			SceneManager.LoadScene(sceneName);
-			Debug.Log("GLOBAL: LoadLevel_SceneLoaded");
+			//Debug.Log("GLOBAL: LoadLevel_SceneLoaded");
 		}
 
 		StateChanged?.Invoke(currentState);
