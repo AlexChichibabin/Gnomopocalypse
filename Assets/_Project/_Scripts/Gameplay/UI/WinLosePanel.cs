@@ -48,9 +48,11 @@ public class WinLosePanel : MonoBehaviour
 			nextLevelText.text = "ƒ¿À≈≈";
 
 			var sceneName = SceneManager.GetActiveScene().name;
-			if (sceneName == progress.GetNextLevelConfig().name)
+			if (sceneName == progress.GetNextLevelConfig().SceneName)
 			{
-				nextLevelButton.gameObject.SetActive(false);
+				Debug.Log(sceneName);
+                Debug.Log(progress.GetNextLevelConfig().name);
+                nextLevelButton.gameObject.SetActive(false);
 			}
 			else
 			{
