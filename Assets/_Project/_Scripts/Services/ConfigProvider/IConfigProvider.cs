@@ -9,7 +9,6 @@
 
 	UnitConfig[] UnitConfigs { get; }
 	ProjectileConfig[] ProjectileConfigs { get; }
-	SpawnRateConfig SpawnRateConfig { get; }
 	UnitConfig GetRandomUnitConfig();
 	UnitConfig GetRandomUnitMutationConfig();
 	ProjectileConfig GetRandomProjectileConfig();

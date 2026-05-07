@@ -83,7 +83,7 @@ public class LevelStateMachine : ILevelStateMachine
 		playerHealth.RestoreHealth();
 		unitTracker.Init();
 
-		if (sceneName == Constants.GameplaySceneName)
+		if (sceneName == Constants.Level1SceneName)
 			audioService.PlayMusic(MusicId.Gameplay1);
 		if (sceneName == Constants.Level2SceneName)
 			audioService.PlayMusic(MusicId.Gameplay2);

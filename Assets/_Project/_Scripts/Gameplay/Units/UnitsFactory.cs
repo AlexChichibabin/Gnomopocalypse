@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 public class UnitsFactory : IInitializable, ILateDisposable
@@ -64,15 +65,15 @@ public class UnitsFactory : IInitializable, ILateDisposable
 
     private IEnumerator SpawnRoutine()                      
     {
-        SpawnRateConfig spawnRateConfig = _configProvider.SpawnRateConfig;
+        LevelConfig levelConfig = _configProvider.GetLevel(SceneManager.GetActiveScene().name);
 
-        if (spawnRateConfig == null)
+        if (levelConfig == null)
         {
             Debug.LogWarning("[UnitsFactory] Spawn rate config is missing");
             yield break;
         }
 
-        SpawnRateStep[] spawnRateSteps = spawnRateConfig.SpawnRateSteps;
+        SpawnRateStep[] spawnRateSteps = levelConfig.SpawnRateSteps;
 
         if (spawnRateSteps == null || spawnRateSteps.Length == 0)
         {

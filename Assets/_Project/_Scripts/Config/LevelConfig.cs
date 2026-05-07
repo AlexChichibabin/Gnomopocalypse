@@ -6,13 +6,6 @@ public class LevelConfig : ScriptableObject
 {
 	public string SceneName;
 	public int UnitCountToWin;
-
-	public List<EnemySpawnerData> enemySpawnerDatas;
+    public SpawnRateStep[] SpawnRateSteps;
 }
 
-[System.Serializable]
-public class EnemySpawnerData
-{
-	//public EnemyId Id;
-	public Vector3 position;
-}
