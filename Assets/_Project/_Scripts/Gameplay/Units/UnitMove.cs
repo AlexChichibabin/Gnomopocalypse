@@ -19,7 +19,7 @@ public class UnitMove : MonoBehaviour
     private void Update()
     {
         if (_canMove)
-            transform.position += Vector3.right * _currentMoveSpeed * Time.deltaTime;
+            transform.position += Vector3.left * _currentMoveSpeed * Time.deltaTime;
     }
 
     public void Immobilize() =>

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b4654cb7e599374cb206ef88c1d20d3, type: 3}
   m_Name: Level1Config
   m_EditorClassIdentifier: Assembly-CSharp::LevelConfig
-  SceneName: Level1Scene
+  SceneName: NewMechanicsScene_1
   UnitCountToWin: 10
   SpawnRateSteps:
   - _minute: 0.25
