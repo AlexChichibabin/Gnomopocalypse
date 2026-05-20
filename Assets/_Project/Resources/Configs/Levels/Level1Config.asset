@@ -27,3 +27,4 @@ MonoBehaviour:
   - _minute: 0.1
     _unitsPerMinute: 20
     _pauseUntilNextWave: 5
+  ProjectileOnLevel: 00000000010000000200000003000000010000000300000001000000000000000100000002000000

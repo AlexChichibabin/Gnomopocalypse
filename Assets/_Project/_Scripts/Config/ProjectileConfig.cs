@@ -8,6 +8,8 @@ public class ProjectileConfig : ScriptableObject
     [SerializeField] private float _maxDragDistance = 2f;
     [SerializeField] private Sprite _uiSprite;
     [SerializeField] private Sprite _objSprite;
+    [SerializeField] private string _description;
+    
 
 
     public ProjectileType ProjectileType => _projectileType;
@@ -15,4 +17,5 @@ public class ProjectileConfig : ScriptableObject
     public float MaxDragDistance => _maxDragDistance;
     public Sprite UiSprite => _uiSprite;
     public Sprite ObjSprite => _objSprite;
+    public string Description => _description;
 }

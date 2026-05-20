@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Zenject;
@@ -31,13 +32,13 @@ public class ProjectileFactory : MonoBehaviour
 
     private void Start()
     {
-        SpawnProjectile();
+        //SpawnProjectile();
     }
 
     private void OnDisable()
     {
-        if (_currentShooting != null)
-            _currentShooting.Released -= OnProjectileReleased;
+        // if (_currentShooting != null)
+        //     _currentShooting.Released -= OnProjectileReleased;
 
         _currentShooting = null;
 
@@ -48,49 +49,58 @@ public class ProjectileFactory : MonoBehaviour
         }
     }
 
-    private Projectile SpawnProjectile()
+    public void Spawn(ProjectileConfig projectileConfig)
     {
-        ProjectileConfig projectileConfig = _projectileSelection.TakeBottomProjectile();
-
-        if (projectileConfig == null)
-        {
-            Debug.LogError("[ProjectileFactory] Projectile config is missing");
-            return null;
-        }
-
         Projectile projectile = _projectilePool.Spawn(projectileConfig);
         projectile.transform.position = _spawnPoint.position;
 
         if (_shootingAnchor == null)
         {
             Debug.LogError("[ProjectileFactory] ShootingAnchor is missing");
-            return projectile;
+            return;
         }
 
         if (projectile.TryGetComponent(out Shooting shooting))
         {
             shooting.Init(_shootingAnchor.transform, projectileConfig);
             _currentShooting = shooting;
-            _currentShooting.Released += OnProjectileReleased;
         }
-
-        return projectile;
+        else
+        {
+             Debug.LogError("[ProjectileFactory] Shooting component is missing");
+        }
     }
 
-    private void OnProjectileReleased()
-    {
-        if (_currentShooting != null)
-            _currentShooting.Released -= OnProjectileReleased;
 
-        _currentShooting = null;
-        _spawnCooldownRoutine = StartCoroutine(SpawnWithCooldownRoutine());
-    }
 
-    private IEnumerator SpawnWithCooldownRoutine()
-    {
-        yield return new WaitForSeconds(_spawnCooldown);
+    // private Projectile SpawnProjectile()
+    // {
+    //     ProjectileConfig projectileConfig = _projectileSelection.TakeBottomProjectile();
 
-        _spawnCooldownRoutine = null;
-        SpawnProjectile();
-    }
+    //     if (projectileConfig == null)
+    //     {
+    //         Debug.LogError("[ProjectileFactory] Projectile config is missing");
+    //         return null;
+    //     }
+
+    //     Projectile projectile = _projectilePool.Spawn(projectileConfig);
+    //     projectile.transform.position = _spawnPoint.position;
+
+    //     if (_shootingAnchor == null)
+    //     {
+    //         Debug.LogError("[ProjectileFactory] ShootingAnchor is missing");
+    //         return projectile;
+    //     }
+
+    //     if (projectile.TryGetComponent(out Shooting shooting))
+    //     {
+    //         shooting.Init(_shootingAnchor.transform, projectileConfig);
+    //         _currentShooting = shooting;
+    //         _currentShooting.Released += OnProjectileReleased;
+    //     }
+
+    //     return projectile;
+    // }
+
+
 }

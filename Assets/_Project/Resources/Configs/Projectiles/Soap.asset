@@ -17,3 +17,4 @@ MonoBehaviour:
   _maxDragDistance: 3
   _uiSprite: {fileID: -6193440507699256877, guid: 4311935118781fd45bc2df0de5bd77fe, type: 3}
   _objSprite: {fileID: -6193440507699256877, guid: 4311935118781fd45bc2df0de5bd77fe, type: 3}
+  _description: "\u041C\u044B\u043B\u043E \u0441\u043A\u043E\u043B\u044C\u0437\u0438\u0442"

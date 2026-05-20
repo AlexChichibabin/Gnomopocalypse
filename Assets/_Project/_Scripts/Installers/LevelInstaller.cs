@@ -5,6 +5,7 @@ public class LevelInstaller : MonoInstaller
 {
     [SerializeField] private Unit _unitPrefab;
     [SerializeField] private Projectile _projectilePrefab;
+    [SerializeField] private ProjectileSlot _projectileSlotPrefab;
     [SerializeField] private UnitsSpawnSettings _unitsSpawnSettings;
     [SerializeField] private ShootingAnchor _shootingAnchor;
 
@@ -21,7 +22,7 @@ public class LevelInstaller : MonoInstaller
 
     private void RegisterGameplayServices()
     {
-        if (_unitPrefab == null || _projectilePrefab == null)
+        if (_unitPrefab == null || _projectilePrefab == null || _projectileSlotPrefab == null)
             Debug.LogError("[LevelInstaller] Pool prefab link lost");
 
         if (_unitsSpawnSettings != null)
@@ -44,6 +45,10 @@ public class LevelInstaller : MonoInstaller
                 .AsSingle();
         }
 
+        Container.Bind<ProjectileFactory>()
+            .FromComponentInHierarchy()
+            .AsSingle();
+
         Container.BindInterfacesAndSelfTo<UnitsFactory>()
             .AsSingle();
 
@@ -63,6 +68,10 @@ public class LevelInstaller : MonoInstaller
         Container.BindMemoryPool<Projectile, Projectile.ProjectilePool>()
             .FromComponentInNewPrefab(_projectilePrefab)
             .UnderTransformGroup("Projectiles");
+
+        Container.BindMemoryPool<ProjectileSlot, ProjectileSlot.ProjectileSlotPool>()
+            .FromComponentInNewPrefab(_projectileSlotPrefab)
+            .UnderTransformGroup("ProjectileSlots");
 
         Container.Bind<IPlayerHealth>().To<PlayerHealth>().AsSingle();
 
