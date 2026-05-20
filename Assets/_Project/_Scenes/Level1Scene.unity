@@ -3806,6 +3806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelInstaller
   _unitPrefab: {fileID: 50510882047931875, guid: 595ae5abb2911de4b859e5cab3545a3b, type: 3}
   _projectilePrefab: {fileID: 7070435549800125884, guid: 01b253c3bcd4719408ec0e529cdf039b, type: 3}
+  _projectileSlotPrefab: {fileID: 9080426254903464484, guid: 9f7aeb4853860e2439db62e2266380c3, type: 3}
   _unitsSpawnSettings: {fileID: 860931242}
   _shootingAnchor: {fileID: 166798487}
 --- !u!114 &1880992233

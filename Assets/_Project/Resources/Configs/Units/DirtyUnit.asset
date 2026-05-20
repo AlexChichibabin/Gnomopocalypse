@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitConfig
   _unitType: 1
   _startHealth: 12
-  _startMoveSpeed: 0.4
+  _startMoveSpeed: 0.1
   _mainDamagePercent: 25
   _secondaryDamagePercent: 10
   _spawnProbability: 30
